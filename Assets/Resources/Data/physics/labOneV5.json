@@ -1,7 +1,7 @@
 {
-    "LabTitle": "To determine resistivity of a wire by plotting a graph between potential difference versus current.",
-    "Aim": "To determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
-    "Background": "We know that resistance is a measure of the opposition to the flow of electricity in a circuit. The potential difference helps to understand the amount of energy transferred between two points in a circuit. In this session, let us learn to determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+    "LabTitle": "To determine the internal resistance of a given primary cell using a potentiometer",
+    "Aim": "To determine the internal resistance of a given primary cell using a potentiometer",
+    "Background": "If l0 and l are the distances of the balance null point from end A of the potentiometer for an open and a closed circuit respectively (Fig. E 5.1), then E is proportional to l0 and V is proportional to l",
     "MaterialsRequired": [
         "Custom",
         "Battery",
@@ -10,27 +10,21 @@
         "Rheostat",
         "Plug key",
         "Connecting wires",
-        "Piece of sandpaper"
+        "Galvanometer"
     ],
     "Theory": "",
     "Diagram": "labDiagrams/labOne.png",
     "Procedure": [
-        "Clean the ends of the connecting wire with the help of sandpaper to remove any insulating coating on them.",
-        "Connect the resistance, rheostat, battery, key, voltmeter, and ammeter as shown in the figure.",
-        "Make sure that the pointers in the voltmeter and milliammeter coincide with the zero mark on the measuring scale. If not, adjust the pointer to coincide with the zero mark by adjusting the screw provided at the base using a screwdriver.",
-        "Note the range and the least count of the given voltmeter and milliammeter.",
-        "Insert the key K and slide the rheostat to the end where the current flow is minimum.",
-        "Note the voltmeter and the milliammeter reading.",
-        "Remove the key K and allow the wire to cool. Again insert the key and slightly increase the voltage by moving the rheostat. Note down the milliammeter and voltmeter reading.",
-        "Repeat step 7 for four different adjustments of the rheostat. Document the readings in a tabular column."
+        "Connect different electrical components as shown in the circuit (Fig. E 5.1). After checking the circuit connections, close key K1.",
+        "With keys K2 and K3 open and a protective high resistance P from the RBOX 2, find the position of the balance point. For final reading, short circuit the resistance P by closing the key K3 and find the balance length l0.",
+        "Take R = 10 Ω (from RBOX 1), close the key K2 and quickly measure the new balance length l. Open K2 as soon as this has been done.",
+        "Keep the readings in the ammeter constant throughout the above observation.",
+        "Reduce the value of R in equal steps of 1 Ω and for each value of R obtain the balance length l.",
+        "At the end of the experiment, open key K2 and repeat step 2 to find l0 again"
     ],
     "Observations": [
-        "Range of ammeters = _ mA to _ mA",
-        "The Least count of ammeter = _ mA",
-        "Range of voltmeter = _ V to _ V",
-        "The Least count of voltmeter = _ V",
-        "The Least count of meter-scale = _ m",
-        "Length of the given wire, l = _ m"
+        "l0(in the beginning of the experiment) = _cm",
+        "l0(in the end of the experiment) = _cm"
     ],
     "Components": [
         {
@@ -38,44 +32,62 @@
             "Type": "VoltageSource",
             "Title": "Voltage Source",
             "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
-            "Position": [0.93, 1.66, 1.43],
+            "Position": [0.83, 2, 1.28],
             "Interfaces": ["0", "pos"],
-            "Parameters": [3.0]
+            "Parameters": [10.0]
         },
         {
-            "Name": "RS",
-            "Type": "Rheostat",
-            "Title": "Rheostat",
-            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
-            "Position": [0.93, 1.66, 0],
-            "Interfaces": ["pos", "am_out", "0"],
-            "Parameters": [4.0e4] 
+            "Name": "Am1",
+            "Type": "Ammeter",
+            "Title": "Ammeter",
+            "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+            "Position": [0.02, 2, 1.28],
+            "Interfaces": ["0", "Am1_out"],
+            "Parameters": [1.0e3, 1.0e1]
         },
         {
             "Name": "K1",
             "Type": "PlugKey",
             "Title": "Plug Key",
             "Description": "This is a plug key",
-            "Position": [0.93, 1.66, -1.43],
-            "Interfaces": ["am_out", "key_out"],
+            "Position": [-0.3, 2, 0.45],
+            "Interfaces": ["Am1_out", "Key1_out"],
             "Parameters": [3.0]
         },
         {
-            "Name": "Am",
+            "Name": "RS1",
+            "Type": "Rheostat",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [-1.21, 1.4, 1.28],
+            "Interfaces": ["Key1_out", "null", "Rs1_out"],
+            "Parameters": [4.0e4] 
+        },
+        {
+            "Name": "RS2",
+            "Type": "Rheostat",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [-1.21, 1.4, 0.02],
+            "Interfaces": ["Rs1_out", "Gal1_in", "pos"],
+            "Parameters": [4.0e4] 
+        },
+        {
+            "Name": "Am2",
             "Type": "Ammeter",
             "Title": "Ammeter",
             "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
-            "Position": [0, 1.66, -1.43],
-            "Interfaces": ["key_out", "key_in"],
+            "Position": [-1.1, 2, -1.41],
+            "Interfaces": ["Gal1_in", "Am2_out"],
             "Parameters": [1.0e3, 1.0e1]
         },
         {
-            "Name": "V2",
-            "Type": "VoltageSource",
-            "Title": "Voltage Source",
-            "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
-            "Position": [0, 1.66, -0.8],
-            "Interfaces": ["key_in", "0"],
+            "Name": "K2",
+            "Type": "PlugKey",
+            "Title": "Plug Key",
+            "Description": "This is a plug key",
+            "Position": [-0.21, 2, -1.41],
+            "Interfaces": ["Am2_out", "Key2_out"],
             "Parameters": [3.0]
         },
         {
@@ -83,18 +95,36 @@
             "Type": "Resistor",
             "Title": "Resistor",
             "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
-            "Position": [-1, 1.66, 0.8],
-            "Interfaces": ["key_in", "key_in"],
+            "Position": [-0.21, 2, -0.8],
+            "Interfaces": ["Gal1_in", "Key2_out"],
             "Parameters": [1, 0, 3, 0.1]
         },
         {
-            "Name": "K2",
+            "Name": "V2",
+            "Type": "VoltageSource",
+            "Title": "Voltage Source",
+            "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+            "Position": [0.71, 2, -0.2],
+            "Interfaces": ["Key2_out", "pos"],
+            "Parameters": [1.0]
+        },
+        {
+            "Name": "K3",
             "Type": "PlugKey",
             "Title": "Plug Key",
             "Description": "This is a plug key",
-            "Position": [-1, 1.66, 1.4],
-            "Interfaces": ["key_in", "0"],
+            "Position": [0.05, 2, -0.2],
+            "Interfaces": ["Key2_out", "Key3_out"],
             "Parameters": [3.0]
+        },
+        {
+            "Name": "R2",
+            "Type": "Resistor",
+            "Title": "Resistor",
+            "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+            "Position": [0.05, 2, 0.55],
+            "Interfaces": ["Key2_out", "pos"],
+            "Parameters": [1, 0, 3, 0.1]
         }
     ]
 }
