@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveCube : MonoBehaviour {
 
 	public bool autoMove=true;
-	public Graphic graph;
+	public CustomGraphic graph;
 
 	public float DC;
 	public float amplitude;

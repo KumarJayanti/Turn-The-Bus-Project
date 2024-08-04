@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
+//https://assetstore.unity.com/packages/tools/utilities/debuggraphs-74707#content
+//https://assetstore.unity.com/packages/tools/integration/graph-magic-data-visualization-toolkit-262115#reviews
 public class LensInteractionScript2D : MonoBehaviour
 {
     public GameObject pencil;
@@ -17,11 +19,15 @@ public class LensInteractionScript2D : MonoBehaviour
     public TMP_Text objectDistanceText;
     public TMP_Text focalLengthText;
     public TMP_Text imageDistanceText;
-    public Graphic graph;
+    public CustomGraphic graph;
+    public Button recordButton; // Add this line to reference the Record button
+    public TableDataHolder tableDataHolder; // Reference to the table data holder
+    private Vector3 lensPosition = new Vector3(0, 0, 0);
 
     private GameObject image;
 
-    private Vector3 lensPosition = new Vector3(0, 0, 0);
+    [Header("events")]
+    public GameEvent recordButtonPressedEvent;
 
     void Start()
     {
@@ -40,20 +46,24 @@ public class LensInteractionScript2D : MonoBehaviour
             }
         }
 
+        // Initialize the record button
+        if (recordButton != null)
+        {
+            recordButton.onClick.AddListener(OnRecordButtonClicked);
+        }
+
         // Add event triggers for OnPointerDown and OnDrag
         AddEventTrigger(focalLengthSlider.gameObject, EventTriggerType.PointerDown, (eventData) => { Debug.Log("Focal Length Slider Pointer Down"); });
         AddEventTrigger(focalLengthSlider.gameObject, EventTriggerType.Drag, (eventData) => { Debug.Log("Focal Length Slider Dragging"); });
 
         // Create an image of the pencil
         image = Instantiate(pencil);
-        //image.GetComponent<SpriteRenderer>().color = Color.blue; // Different color to distinguish
-        // Set the image color to be the same as the pencil
         image.GetComponent<SpriteRenderer>().color = pencil.GetComponent<SpriteRenderer>().color;
 
         // Position the optical center at the lens position
         if (opticalCenter != null)
         {
-            opticalCenter.transform.position = lensPosition;
+            opticalCenter.transform.position = new Vector3(0, 0, 0);
             AddLabelToPoint(opticalCenter, "LabelC", "C");
         }
 
@@ -74,44 +84,35 @@ public class LensInteractionScript2D : MonoBehaviour
 
     void OnFocalLengthChanged(float value)
     {
+        graph.IniGraph();
         UpdatePositions();
         UpdateTexts();
         UpdateLabelPositions();
     }
 
-    /*
-        void UpdatePositions()
-        {
-            if (pencil == null || image == null) return;
+    void OnRecordButtonClicked()
+    {
+        float objectDistance = objectDistanceSlider.value;
+        float focalLength = focalLengthSlider.value;
 
-            // Get slider values
-            float objectDistance = objectDistanceSlider != null ? objectDistanceSlider.value : 0;
-            float focalLength = focalLengthSlider != null ? focalLengthSlider.value : 0;
+         Debug.Log("Recorded: Object Distance = " + objectDistance + ", Focal Length = " + focalLength);
 
-            if (objectDistance == 0 || objectDistance == focalLength)
-            {
-                image.transform.position = new Vector3(lensPosition.x, 0.5f, lensPosition.z);
-                if (imageDistanceText != null)
-                    imageDistanceText.text = "Image Distance (v): Undefined";
-                return;
-            }
+        // Calculate image distance
+        float imageDistance = 1 / (1 / focalLength - 1 / objectDistance);
 
-            // Position the pencil based on object distance
-            pencil.transform.position = new Vector3(lensPosition.x - objectDistance, 0.5f, lensPosition.z);
+        // Calculate corrected values and other columns as needed
+        float correctedU = objectDistance + Random.Range(0.0f, 0.2f);
+        float correctedV = imageDistance + Random.Range(0.0f, 0.2f);
+        float reciprocalU = 1 / correctedU;
+        float reciprocalV = 1 / correctedV;
+        float f = correctedU * correctedV / (correctedU + correctedV);
+        float df = f - focalLength;
+        // Record the values in the table
+        tableDataHolder.AddRow(objectDistance, imageDistance, correctedU, correctedV, reciprocalU, reciprocalV, f, df);
+        recordButtonPressedEvent.Raise(this, objectDistanceSlider.value);
+    }
 
-            // Image distance using lens formula (1/f = 1/do + 1/di)
-            float imageDistance = 1 / (1 / focalLength - 1 / objectDistance);
-
-            // Position the image on the opposite side of the lens
-            image.transform.position = new Vector3(lensPosition.x + imageDistance, 0.5f, pencil.transform.position.z);
-
-            // Scale the image to reflect inversion (if needed)
-            float imageScaleY = objectDistance < focalLength ? -1 : 1;
-            image.transform.localScale = new Vector3(pencil.transform.localScale.x, imageScaleY * pencil.transform.localScale.y, pencil.transform.localScale.z);
-        }
-        */
-
-    void UpdatePositions()
+      void UpdatePositions()
 {
     if (pencil == null || image == null) return;
 
@@ -226,6 +227,7 @@ public class LensInteractionScript2D : MonoBehaviour
         }
     }
 
+    
     void UpdateLabelPositions()
     {
         float focalLength = focalLengthSlider != null ? focalLengthSlider.value : 0.5f;
@@ -243,7 +245,9 @@ public class LensInteractionScript2D : MonoBehaviour
         UpdateLabelPosition(point2F2, "Label2F2");
         UpdateLabelPosition(opticalCenter, "LabelC");
     }
+     
 
+ 
     void UpdateLabelPosition(GameObject point, string labelName)
     {
         if (point == null) return;
@@ -254,6 +258,7 @@ public class LensInteractionScript2D : MonoBehaviour
             labelTransform.position = point.transform.position + new Vector3(0, -0.1f, 0);
         }
     }
+  
 
     void DrawPrincipalAxis()
     {
@@ -279,6 +284,7 @@ public class LensInteractionScript2D : MonoBehaviour
         trigger.triggers.Add(entry);
     }
 
+ 
     void AddLabelToPoint(GameObject point, string labelName, string labelText)
     {
         if (point == null) return;
@@ -293,4 +299,7 @@ public class LensInteractionScript2D : MonoBehaviour
         label.color = Color.black;
         label.alignment = TextAlignmentOptions.Center;
     }
+ 
+     
 }
+

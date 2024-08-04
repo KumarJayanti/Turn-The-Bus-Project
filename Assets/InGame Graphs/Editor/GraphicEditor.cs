@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
-[CustomEditor(typeof(Graphic))]
+[CustomEditor(typeof(CustomGraphic))]
 public class GraphicEditor : Editor {
 
 	//bool for foldout
@@ -24,7 +24,7 @@ public class GraphicEditor : Editor {
 		Undo.RecordObject(target, "Do Something ");
 
 		//gets the script
-		Graphic graph = (Graphic)target;
+		CustomGraphic graph = (CustomGraphic)target;
 
 		//adds spacing
 		EditorGUILayout.Space ();
