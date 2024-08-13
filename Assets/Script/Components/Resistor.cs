@@ -42,6 +42,11 @@ public class Resistor : CircuitComponent
     public double Tolerance; // Not Using it, declaring just to use in SpiceSharp
     public double Resistance;
 
+    public float GalvanometerResistance = 100.0f;
+
+    public float fullScaleDeflection = 0.0006f;
+
+
     public const int MAX_MULTIPLIER = 6;
     public const int MIN_MULTIPLIER = -2;
     public const int MAX_RESISTANCE_PARAM = 9;
@@ -62,17 +67,22 @@ public class Resistor : CircuitComponent
         this.Title = title;
         this.Description = description;
 
+        
+
         ResistorParam1 = Math.Max(Math.Min((int)parameters[0], MAX_RESISTANCE_PARAM), MIN_RESISTANCE_PARAM);
         ResistorParam2 = Math.Min(Math.Min((int)parameters[1], MAX_RESISTANCE_PARAM), MIN_RESISTANCE_PARAM);
         Multiplier = Math.Max(Math.Min((int)parameters[2], MAX_MULTIPLIER), MIN_MULTIPLIER);
-        Resistance = (ResistorParam1 * 10 + ResistorParam2) * Math.Pow(10, Multiplier);
-
+        // Resistance = (ResistorParam1 * 10 + ResistorParam2) * Math.Pow(10, Multiplier);
+        
+        Resistance = (3.0/0.0006) - 100;
+        
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
         spiceEntitys.Add(new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], Resistance));
     }
 
     protected override void Start()
     {
+        // Debug.Log("Resistance" + Resistance);
         base.Start();
         Band1.GetComponent<Renderer>().material = loadBandColor(ResistorParam1, RESISTANCE_BAND_COLORS);
         Band2.GetComponent<Renderer>().material = loadBandColor(ResistorParam2, RESISTANCE_BAND_COLORS);
