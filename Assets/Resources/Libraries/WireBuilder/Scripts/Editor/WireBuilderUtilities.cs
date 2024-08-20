@@ -142,7 +142,7 @@ namespace WireBuilder
 
         public static List<Wire> GetWiresUsingType(WireType wireType)
         {
-            Wire[] allWires = FindObjectsOfType<Wire>();
+            Wire[] allWires = Object.FindObjectsByType<Wire>(FindObjectsSortMode.None);
             List<Wire> wires = new List<Wire>();
 
             for (int i = 0; i < allWires.Length; i++)
@@ -222,7 +222,7 @@ namespace WireBuilder
         {
             reconnectedWires.Clear();
 
-            Wire[] wires = GameObject.FindObjectsOfType<Wire>();
+            Wire[] wires = GameObject.FindObjectsByType<Wire>(FindObjectsSortMode.InstanceID);
 
             Debug.Log("Checking " + wires.Length + " wires...");
 

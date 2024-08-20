@@ -46,7 +46,7 @@ public class ExperimentNavigation : MonoBehaviour
         foreach(Experiment experiment in Experiments.Experiments)
         {
             Button btn = Instantiate(prefeb_labButton);
-            btn.transform.parent = parent;
+            btn.transform.SetParent(parent,false);
             btn.transform.position = new Vector3(width, height, 0);
             btn.GetComponent<RectTransform>().sizeDelta = new Vector2(327.8f, 48.2f);
             width += 450f;
