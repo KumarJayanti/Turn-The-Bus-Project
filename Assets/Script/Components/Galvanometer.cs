@@ -36,6 +36,7 @@ public class Galvanometer : CircuitComponent
         {
             // Debug.Log(am.Indicator);
             this.Indicator = currentExport.Value  ;        
+            //this.Indicator = currentExport.Value + am.Indicator ;
             gameObject.GetComponentInChildren<GalvanometerText>().UpdateGalvanometerValue(this.Indicator * this.Scale);
         };
     }
