@@ -1,3 +1,4 @@
+
 Case object at infinitiy the image is point sized,inverted, real.
 
 Case object beyond 2F the image is inverted, smaller, real.
