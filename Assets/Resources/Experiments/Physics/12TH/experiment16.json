@@ -1,0 +1,191 @@
+{
+  "ExperimentTitle": "To draw the I - V characteristic curves of a p-n junction in forward bias and reverse bias.",
+  "Aim": "To draw the I - V characteristic curves of a p-n junction in forward bias and reverse bias.",
+  "Background": "",
+  "MaterialsRequired": [
+    "p-n junction diode (OA-79 or 1N4007)",
+    "a resistor of value (3Ω, 1/2W)",
+    "one variable voltage power supply (0-12V)",
+    "voltmeter (0-12V)",
+    "milliammeter (0-200 mA)",
+    "a plug key",
+    "connecting wires",
+    "sand paper",
+    "microammeter (0-200 µA)"
+  ],
+  "Theory": "",
+  "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment16.png",
+  "Procedure": [
+    "1. Note the range and least count of the given voltmeter (V), milliammeter (mA) and the microammeter (µA).",
+    "2. Remove the insulating layers from the connecting wires and leads of diode using a sand paper.",
+    "3. Connect the variable voltage power supply, p-n junction diode, voltmeter, milliammeter, resistor and a plug key in a circuit as shown in Fig. E 16.1.",
+    "4. Initially when the key is open, you would note at this stage, that no current is flowing through the circuit. Now close the key.",
+    "5. Give a small voltage to the circuit by slight and gentle turning of the power supply knob. Note the voltmeter reading across the diode and the corresponding milliammeter reading to find the current I flowing through the diode.",
+    "6. Gradually, increase the applied voltage (in steps) in the circuit and note the corresponding voltmeter and milliammeter readings in Table E 16.1. The value of current flowing through the diode would be negligibly small till the voltage across the diode exceeds the value of its cut in or threshold voltage. After the cutin voltage, the variation in current will be rapid.",
+    "7. Once the threshold voltage is reached, vary the diode voltage very slowly (preferably in steps of 0.1V) noting the corresponding current I flowing through the diode. Continue increasing voltage till the current reaches the limit of the milliammeter.",
+    "8. Now disconnect the circuit and make the connections as shown in Fig. E 16.2 for the reverse bias characteristics. Connect p-side of p-n junction diode to the Fig. E 16.2 Reverse biasing for a p-n junction diode Fig. E 16.1 Forward biasing for a p-n junction diode 16 24/04/2018 122 LABORATORY MANUAL negative terminal of the power supply and replace milliameter with a microammeter. Gradually, increase the applied voltage (in steps) in the circuit and note the corresponding voltmeter and microammeter readings in Table E 16.2. In this part of experiment, with the given supply voltage you will get only flat portion of the reverse bias characteristic curve."
+  ],
+  "Observations": [
+    "p-n junction diode used (diode no.) = ...",
+    "Range of the voltmeter = ... V to ... V",
+    "Least count of the voltmeter scale = ... V",
+    "Range of the milliammeter = ... mA to ... mA",
+    "Least count of the milliammeter scale = ... mA"
+  ],
+  "Components": [
+    {
+      "Name": "V1",
+      "Type": "VoltageSource",
+      "Title": "Voltage Source",
+      "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+      "Position": [-2.5, 0, -2.02],
+      "Rotation": [0, 0, 0],
+      "Scale": [5, 5, 5],
+      "Interfaces": ["pos", "0"],
+      "Parameters": [10]
+    },
+    {
+      "Name": "V2",
+      "Type": "VoltageSource",
+      "Title": "Voltage Source",
+      "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+      "Position": [-2.92, 0, 0.11],
+      "Rotation": [0, 180, 0],
+      "Scale": [5, 5, 5],
+      "Interfaces": ["0", "neg"],
+      "Parameters": [5]
+    },
+    {
+      "Name": "K1",
+      "Type": "PlugKey",
+      "Title": "Plug Key",
+      "Description": "This is a plug key",
+      "Position": [-6.24, 0, -1.68],
+      "Rotation": [0, -90, 0],
+      "Scale": [1, 2, 1],
+      "Interfaces": ["c1", "pos"],
+      "Parameters": [3.0]
+    },
+    {
+      "Name": "Connector1",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [-8.35, 0.99, 0.04],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["c1", "vol1", "N0", "N1"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "K2",
+      "Type": "PlugKey",
+      "Title": "Plug Key",
+      "Description": "This is a plug key",
+      "Position": [-6.21, 0, 0.2],
+      "Rotation": [0, -90, 0],
+      "Scale": [1, 2, 1],
+      "Interfaces": ["c2", "neg"],
+      "Parameters": [3.0]
+    },
+    {
+      "Name": "Connector2",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [-8.14, 0.99, -1.32],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["c2", "vol1", "N2", "N3"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Connector3",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [-0.53, 0.99, -0.17],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["0", "rhin", "N4", "N5"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Connector4",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [-0.51, 0.99, -2.17],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["0", "rhin", "N6", "N7"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "RS1",
+      "Type": "Rheostat",
+      "Title": "Rheostat",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [5.87, 1, -0.33],
+      "Rotation": [0, -90, 0],
+      "Scale": [4, 4, 4],
+      "Interfaces": ["rhin", "c5", "nill"],
+      "Parameters": [100]
+    },
+    {
+      "Name": "Connector5",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [9.46, 0.99, 1.64],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["c5", "Amm", "N8", "N9"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Am1",
+      "Type": "Ammeter",
+      "Title": "Ammeter",
+      "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+      "Position": [7.75, 0, 4.35],
+      "Rotation": [0, -90, 0],
+      "Scale": [15, 15, 15],
+      "Interfaces": ["Amm", "Amm_Out"],
+      "Parameters": [1.0e3, 1]
+    },
+    {
+      "Name": "R1",
+      "Type": "Resistor",
+      "Title": "Resistor",
+      "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+      "Position": [1.88, 0, 4.23],
+      "Rotation": [0, -90, 0],
+      "Scale": [2, 2, 2],
+      "Interfaces": ["rout", "Amm_Out"],
+      "Parameters": [1, 0, 0, 0]
+    },
+    {
+      "Name": "Vm",
+      "Type": "Voltmeter",
+      "Title": "Voltmeter",
+      "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
+      "Position": [-6.58, 2.3, 1.08],
+      "Rotation": [0, -90, 0],
+      "Scale": [10, 10, 10],
+      "Interfaces": ["vol1", "rout"],
+      "Parameters": [1, 1.0e8]
+    },
+    {
+      "Name": "D1",
+      "Type": "Diode",
+      "Title": "Diode",
+      "Description": "Diode",
+      "Position": [-6.58, 2.3, 1.08],
+      "Rotation": [0, -90, 0],
+      "Scale": [1, 1, 1],
+      "Interfaces": ["vol1", "rout"],
+      "Parameters": ["nill"]
+    }
+  ]
+}

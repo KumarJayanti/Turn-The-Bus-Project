@@ -22,6 +22,13 @@
       "ExperimentJSON": "Experiments/Physics/12TH/experiment5"
     },
     {
+      "ExperimentNumber": 9,
+      "ExperimentType": "OpticalLab9",
+      "ExperimentTitle": "To find the value of ‘v’ for different values of ‘u’ in case of concave mirror and to find the focal length",
+      "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment9.png",
+      "ExperimentJSON": "-"
+    },
+    {
       "ExperimentNumber": 14,
       "ExperimentType": "OpticalLab14",
       "ExperimentTitle": "To determine refractive index of a glass slab using a travelling microscope.",
@@ -34,6 +41,13 @@
       "ExperimentTitle": "To determine the refractive index of a liquid (water) using (i) concave mirror, (ii) convex lens and a plane mirror.",
       "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment15.png",
       "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 16,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To draw the I - V characteristic curves of a p-n junction in forward bias and reverse bias.",
+      "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment16.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment16"
     }
   ]
 }
