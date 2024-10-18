@@ -1,6 +1,5 @@
 {
   "Experiments": [
-     
     {
       "ExperimentNumber": 1,
       "ExperimentType": "ElectricalLab",
@@ -16,39 +15,11 @@
       "ExperimentJSON": "Experiments/Physics/12TH/experiment2"
     },
     {
-        "ExperimentNumber": 3,
-        "ExperimentType": "ElectricalLab",
-        "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
-        "ExperimentPic":"Assets/Resources/Pictures/ExperimentPics/experiment3.png",
-        "ExperimentJSON": "Experiments/Physics/12TH/experiment3"
-    },
-    {
       "ExperimentNumber": 5,
       "ExperimentType": "ElectricalLab",
       "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
       "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment5.png",
       "ExperimentJSON": "Experiments/Physics/12TH/experiment5"
-    },
-{
-        "ExperimentNumber": 6,
-        "ExperimentType": "ElectricalLab",
-        "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
-        "ExperimentPic":"Assets/Resources/Pictures/ExperimentPics/experiment5.png",
-        "ExperimentJSON": "Experiments/Physics/12TH/experiment6"
-      },
-      {
-        "ExperimentNumber": 7,
-        "ExperimentType": "ElectricalLab",
-        "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
-        "ExperimentPic":"Assets/Resources/Pictures/ExperimentPics/experiment5.png",
-        "ExperimentJSON": "Experiments/Physics/12TH/experiment7b"
-      },
-      {
-        "ExperimentNumber": 7,
-        "ExperimentType": "ElectricalLab",
-        "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
-        "ExperimentPic":"Assets/Resources/Pictures/ExperimentPics/experiment5.png",
-        "ExperimentJSON": "Experiments/Physics/12TH/experiment7a"
     },
     {
       "ExperimentNumber": 9,
