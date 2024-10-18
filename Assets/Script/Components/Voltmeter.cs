@@ -29,6 +29,7 @@ public class Voltmeter : CircuitComponent
         circuit.Sim.ExportSimulationData += (sender, args) =>
         {
             this.Indicator = voltageExport.Value;
+            // Debug.Log(Indicator);
 
             gameObject.GetComponentInChildren<VoltmeterText>().UpdateVoltageValue(this.Indicator * this.Scale);
         };

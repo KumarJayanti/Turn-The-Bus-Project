@@ -117,36 +117,82 @@ public class Circuit : MonoBehaviour
     }
 
     public void InitCircuit()
+{
+    Ckt = new SpiceSharp.Circuit();
+    Sim = new SpiceSharp.Simulations.OP("Sim");
+
+    if (componentMetaList?.Components == null)
     {
-        Ckt = new SpiceSharp.Circuit();
-        Sim = new SpiceSharp.Simulations.OP("Sim");
-        foreach(ComponentMeta meta in componentMetaList.Components)
+        Debug.LogError("ComponentMetaList or its Components array is null!");
+        return;
+    }
+
+    foreach (ComponentMeta meta in componentMetaList.Components)
+    {
+        if (meta == null)
         {
-            string prefabPath = PREFAB_PATH + meta.Type;
-            Debug.Log(prefabPath);
-            GameObject prefabObject = Resources.Load<GameObject>(prefabPath);
-            Debug.Log(prefabObject);
-            var instance = Instantiate(prefabObject, this.transform, true);
-            instance.name = meta.Name;
+            Debug.LogError("ComponentMeta is null!");
+            continue;
+        }
 
-            // you will probably need to move this to whatever function you use for on click, but these are the field names to have SetText called
-            // componentTitleField.SetText(meta.Name);
-            // componentDescriptionField.SetText(meta.Description); (this is for the Description field you're going to add)
+        string prefabPath = PREFAB_PATH + meta.Type;
+        Debug.Log("Loading prefab from path: " + prefabPath);
 
+        GameObject prefabObject = Resources.Load<GameObject>(prefabPath);
 
+        if (prefabObject == null)
+        {
+            Debug.LogError("Prefab not found at path: " + prefabPath);
+            continue;
+        }
+
+        Debug.Log("Prefab loaded successfully: " + prefabObject.name);
+        GameObject instance = Instantiate(prefabObject, this.transform, true);
+        instance.name = meta.Name;
+
+        if (meta.Position != null)
+        {
             instance.transform.position = new Vector3(meta.Position[0], meta.Position[1], meta.Position[2]);
+        }
+        else
+        {
+            Debug.LogError("Position array is null for component: " + meta.Name);
+        }
+
+        if (meta.Rotation != null)
+        {
             instance.transform.Rotate(meta.Rotation[0], meta.Rotation[1], meta.Rotation[2], Space.World);
+        }
+        else
+        {
+            Debug.LogError("Rotation array is null for component: " + meta.Name);
+        }
+
+        if (meta.Scale != null)
+        {
             instance.transform.localScale = new Vector3(meta.Scale[0], meta.Scale[1], meta.Scale[2]);
+        }
+        else
+        {
+            Debug.LogError("Scale array is null for component: " + meta.Name);
+        }
 
-            CircuitComponent thisComponent = instance.GetComponent<CircuitComponent>();
+        CircuitComponent thisComponent = instance.GetComponent<CircuitComponent>();
+        if (thisComponent != null)
+        {
             thisComponent.InitSpiceEntity(meta.Name, meta.Interfaces, meta.Parameters, meta.Title, meta.Description);
-
             circuitComponents.Add(thisComponent);
             thisComponent.RegisterComponent(this);
-
             thisComponent.InitInterfaces(meta.Interfaces);
         }
+        else
+        {
+            Debug.LogError("CircuitComponent not found on instantiated prefab: " + instance.name);
+        }
     }
+}
+
+
 
     public void GenerateWires()
     {

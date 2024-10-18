@@ -10,6 +10,8 @@ public class WireResistor : CircuitComponent
     public double wireLength;
     public double Resistance;
 
+    
+
     public const string MATERIAL_PATH = "Assets/Resources/Materials/Resistor Materials";
 
     public void InitWireResistor(double areaOfCrossSection, double resistivity, double length)
