@@ -37,12 +37,14 @@ public class Ammeter : CircuitComponent
             gameObject.GetComponentInChildren<AmmeterText>().UpdateAmmeterValue(this.Indicator * this.Scale);
         };
     }
+
     private void OnMouseDown()
     {
         Circuit.isLabelWindowOpen = true;
         Circuit.componentTitle = Title;
         Circuit.componentDescription = Description;
         if (this.Indicator * this.Scale >= 100 || this.Indicator * this.Scale <= -100) { Circuit.componentValue = string.Format("{0:0.##}", this.Indicator * this.Scale / 1000) + " A"; }
+        else if (this.Indicator*this.Scale <= 1 && this.Indicator*this.Scale >= -1) { Circuit.componentValue = string.Format("{0:0.##}", this.Indicator*this.Scale * 1e7) + " \u03bcA"; }
         else { Circuit.componentValue = string.Format("{0:0.##}", this.Indicator * this.Scale) + " mA"; }
     }
 }
