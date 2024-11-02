@@ -1,4 +1,3 @@
- 
 {
     "ExperimentTitle": "Class 12 Experiment 6",
     "Aim": "To determine the internal resistance of a given primary cell using a potentiometer.",
@@ -121,7 +120,6 @@
             "Interfaces": ["key1_in", "key1_out"],
             "Parameters": [3.0]
         }
-        
         
         
     ]

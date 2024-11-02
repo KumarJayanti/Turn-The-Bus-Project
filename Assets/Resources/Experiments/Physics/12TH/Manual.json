@@ -1,4 +1,3 @@
-
 {
   "Experiments": [
      
@@ -52,18 +51,25 @@
         "ExperimentJSON": "Experiments/Physics/12TH/experiment6"
       },
       {
-        "ExperimentNumber": 7,
+        "ExperimentNumber": 7.1,
         "ExperimentType": "ElectricalLab",
         "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
         "ExperimentPic":"Assets/Resources/Pictures/ExperimentPics/experiment5.png",
         "ExperimentJSON": "Experiments/Physics/12TH/experiment7b"
       },
       {
-        "ExperimentNumber": 7,
+        "ExperimentNumber": 7.2,
         "ExperimentType": "ElectricalLab",
         "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
         "ExperimentPic":"Assets/Resources/Pictures/ExperimentPics/experiment5.png",
         "ExperimentJSON": "Experiments/Physics/12TH/experiment7a"
+    },
+     {
+      "ExperimentNumber": 9,
+      "ExperimentType": "OpticalLab9",
+      "ExperimentTitle": "To find the value of ‘v’ for different values of ‘u’ in case of concave mirror and to find the focal length",
+      "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment9.png",
+      "ExperimentJSON": "-"
     },
     {
       "ExperimentNumber": 14,
@@ -78,6 +84,13 @@
       "ExperimentTitle": "To determine the refractive index of a liquid (water) using (i) concave mirror, (ii) convex lens and a plane mirror.",
       "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment15.png",
       "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 16,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To draw the I - V characteristic curves of a p-n junction in forward bias and reverse bias.",
+      "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment16.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment16"
     },
       {
         "ExperimentNumber": 17,
@@ -95,4 +108,3 @@
       }
   ]
 }
-

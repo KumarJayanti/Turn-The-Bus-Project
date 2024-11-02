@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> DEVELOPERX-coder-main
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -104,4 +107,7 @@ public class Resistor : CircuitComponent
         Circuit.componentValue = Resistance.ToString() + " OHM";
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> DEVELOPERX-coder-main
