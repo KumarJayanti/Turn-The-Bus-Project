@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> DEVELOPERX-coder-main
 // experient 7 partA
 using SpiceSharp;
 using System.Collections;
@@ -39,11 +36,7 @@ public class Galvanometer : CircuitComponent
         circuit.Sim.ExportSimulationData += (sender, args) =>
         {
             // Debug.Log(am.Indicator);
-<<<<<<< HEAD
             this.Indicator = currentExport.Value  ;    
-=======
-            this.Indicator = currentExport.Value  ;        
->>>>>>> DEVELOPERX-coder-main
             //this.Indicator = currentExport.Value + am.Indicator ;
             gameObject.GetComponentInChildren<GalvanometerText>().UpdateGalvanometerValue(this.Indicator * this.Scale);
         };
