@@ -1,4 +1,4 @@
-/*using SpiceSharp.Attributes;
+ /*using SpiceSharp.Attributes;
 using SpiceSharp.Components;
 using SpiceSharp.Entities;
 using SpiceSharp.ParameterSets;
@@ -12,12 +12,15 @@ internal class DiodeModelParameters : ParameterSet
 
     [ParameterName("is"), ParameterInfo("Reverse saturation current")]
     public double ReverseSaturationCurrent { get; set; }
+    *********
 }*/
 using UnityEngine;
 using SpiceSharp.Components;
 using SpiceSharp.Entities;
 using System.Collections;
 using System.Collections.Generic;
+using SpiceSharp.Components.Diodes;
+
 public class ZenerDiode : CircuitComponent
 {
     public const string MATERIAL_PATH = "Materials/Diode materials/";
@@ -71,7 +74,7 @@ public class ZenerDiode : CircuitComponent
 
         // Set the model name
         model = uniqueModelName;
-        spiceEntitys.Add(new Diode(name, interfaces[0], interfaces[1], model));
+        spiceEntitys.Add(new SpiceSharp.Components.Diode(name, interfaces[0], interfaces[1], model));
     }
 
     protected override void Start()
