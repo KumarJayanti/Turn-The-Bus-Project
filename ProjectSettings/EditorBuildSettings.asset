@@ -26,5 +26,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LabScenes/OpticalLab9.unity
     guid: 93637c67d12ae2243bb18013f049f25a
+  - enabled: 1
+    path: Assets/Scenes/LabScenes/OpticalLab11.unity
+    guid: f1c0e224bba280f4eb70b9a3b10cc41f
+  - enabled: 1
+    path: Assets/Scenes/LabScenes/OpticalLab10.unity
+    guid: 5dbf1a64271486d478f6fa9ef6caa985
+  - enabled: 1
+    path: Assets/Scenes/LabScenes/OpticalLab12.unity
+    guid: 2079f53d046316e4a9ac94fb8a8ab81b
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
