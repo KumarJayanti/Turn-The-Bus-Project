@@ -14,19 +14,19 @@ public class Diode : CircuitComponent
         this.Title = title;
         this.Description = description;
 
-        var model = new DiodeModel("D1N4007");
-        model.SetParameter("is", 7.69e-11);//Saturation current
-        model.SetParameter("rs", 4.2e-2);//Series Resistance
-        model.SetParameter("bv", 1.0e3);//Reverse Breakdown voltage
-        model.SetParameter("ibv", 5.0e-6);//Reverse Breakdown Current
-        model.SetParameter("cjo", 2.65e-11);//Zero-bias junction capacitance
-        model.SetParameter("m", 3.33e-1);//Grading coefficient
-        model.SetParameter("n", 1.45e0);//Emission coefficient
-        model.SetParameter("tt", 4.32e-6);//transi-time
+        var model = new DiodeModel("test");
+        model.SetParameter("is", 7.69e-11);
+        model.SetParameter("rs", 4.2e-2);
+        model.SetParameter("bv", 1.0e3);
+        model.SetParameter("ibv", 5.0e-6);
+        model.SetParameter("cjo", 2.65e-11);
+        model.SetParameter("m", 3.33e-1);
+        model.SetParameter("n", 1.45e0);
+        model.SetParameter("tt", 4.32e-6);
 
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
         spiceEntitys.Add(new SpiceSharp.Components.DiodeModel(model.Name));
-        spiceEntitys.Add(new SpiceSharp.Components.Diode(name, interfaces[0], interfaces[1], "D1N4007"));
+        spiceEntitys.Add(new SpiceSharp.Components.Diode(name, interfaces[0], interfaces[1], "test"));
     }
 
     // Start is called before the first frame update
