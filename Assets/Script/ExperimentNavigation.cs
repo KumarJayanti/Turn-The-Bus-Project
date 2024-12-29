@@ -6,7 +6,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using UnityEngine.Networking; // Required for UnityWebRequest
+ 
 public class ExperimentNavigation : MonoBehaviour
 {
     public TextAsset manualJSON;
@@ -35,6 +36,27 @@ public class ExperimentNavigation : MonoBehaviour
     }
 
     public ExperimentList Experiments = new ExperimentList();
+
+IEnumerator LoadImage(string filePath, RawImage buttonImg)
+{
+    string imagePath = Path.Combine(Application.streamingAssetsPath, filePath);
+
+    using (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(imagePath))
+    {
+        yield return uwr.SendWebRequest();
+
+        if (uwr.result == UnityWebRequest.Result.Success)
+        {
+            Texture2D tex = DownloadHandlerTexture.GetContent(uwr);
+            buttonImg.texture = tex;
+        }
+        else
+        {
+            Debug.LogError($"Error loading image: {uwr.error}");
+            buttonImg.texture = null; // Set fallback texture
+        }
+    }
+}
 
     
     // Start is called before the first frame update
@@ -66,10 +88,15 @@ public class ExperimentNavigation : MonoBehaviour
             buttonDescription.fontSize = 24;
 
             // Load and set button image
-            byte[] imageBytes = File.ReadAllBytes(experiment.ExperimentPic);
+            StartCoroutine(LoadImage(experiment.ExperimentPic, buttonImg));
+            /*
+            string imagePath = Path.Combine(Application.streamingAssetsPath, experiment.ExperimentPic);
+            byte[] imageBytes = File.ReadAllBytes(imagePath);
+            //byte[] imageBytes = File.ReadAllBytes(experiment.ExperimentPic);
             Texture2D tex = new Texture2D(2, 2);
             tex.LoadImage(imageBytes);
             buttonImg.texture = tex;
+            */
         }
         catch (Exception ex)
         {
