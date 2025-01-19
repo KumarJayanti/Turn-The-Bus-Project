@@ -94,7 +94,7 @@
     },
     {
       "ExperimentNumber": 13,
-      "ExperimentType": "OpticalLab12",
+      "ExperimentType": "my3",
       "ExperimentTitle": "To determine the angle of minimum deviation for a given glass prism, by plotting a graph between the angle of incidence and angle of deviation",
       "ExperimentPic": "experiment9.png",
       "ExperimentJSON": "-"
