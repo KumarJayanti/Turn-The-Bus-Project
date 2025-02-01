@@ -40,7 +40,7 @@
       "Description": "VariableVoltage",
       "Position": [-0.32, 2.3, -3.16],
       "Rotation": [0, 0, 0],
-      "Scale": [4, 4, 4],
+      "Scale": [5, 5, 5],
       "Interfaces": ["pos", "0", "pos1", "0"],
       "Parameters": [-1000, 1]
     },
@@ -51,7 +51,7 @@
       "Description": "This is a plug key",
       "Position": [-6.24, 0, -0.48],
       "Rotation": [0, -90, 0],
-      "Scale": [2, 2, 2],
+      "Scale": [3, 3, 3],
       "Interfaces": ["ko", "pos"],
       "Parameters": [3.0]
     },
@@ -73,7 +73,7 @@
       "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
       "Position": [7.75, 0, 5.04],
       "Rotation": [0, -90, 0],
-      "Scale": [15, 15, 15],
+      "Scale": [20, 20, 20],
       "Interfaces": ["amo", "ami"],
       "Parameters": [1.0e3, 1]
     },
@@ -84,7 +84,7 @@
       "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
       "Position": [-0.83, 2.3, 3.61],
       "Rotation": [0, -90, 0],
-      "Scale": [10, 10, 10],
+      "Scale": [18, 18, 18],
       "Interfaces": ["ko", "amo"],
       "Parameters": [1, 1.0e28]
     },

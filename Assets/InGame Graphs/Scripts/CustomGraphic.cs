@@ -1,4 +1,4 @@
-﻿/// <summary>
+﻿ /// <summary>
 /// Graphic - Ideal for monitoring a parameter in real time
 /// Code by João Ramiro
 /// </summary>

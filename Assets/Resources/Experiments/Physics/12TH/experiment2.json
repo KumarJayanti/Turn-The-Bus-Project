@@ -52,7 +52,7 @@
       "Description": "This is a plug key",
       "Position": [-0.27, 2.3, 5.92],
       "Rotation": [0, -90, 0],
-      "Scale": [2, 2, 2],
+      "Scale": [3, 3, 3],
       "Interfaces": ["C1", "0"],
       "Parameters": [3.0]
     },
@@ -83,9 +83,9 @@
       "Type": "Rheostat",
       "Title": "Rheostat",
       "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
-      "Position": [-0.25, 0.99, -1.95],
+      "Position": [-0.25, 0.99, -2.5],
       "Rotation": [0, -90, 0],
-      "Scale": [3, 3, 3],
+      "Scale": [4, 4, 4],
       "Interfaces": ["N6", "am_in", "rs2_in"],
       "Parameters": [100]
     },
@@ -96,7 +96,7 @@
       "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
       "Position": [-0.15, 2.3, -0.69],
       "Rotation": [0, -90, 0],
-      "Scale": [10, 10, 10],
+      "Scale": [15, 15, 15],
       "Interfaces": ["am_in", "C3"],
       "Parameters": [1.0e3, 1.0e1]
     },
@@ -116,9 +116,9 @@
       "Type": "Rheostat",
       "Title": "Rheostat",
       "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
-      "Position": [4.24, 2.45, 2.2],
+      "Position": [5, 2.45, 2.2],
       "Rotation": [0, -90, 0],
-      "Scale": [3, 3, 3],
+      "Scale": [4, 4, 4],
       "Interfaces": ["N8", "am_out", "C2"],
       "Parameters": [10]
     },

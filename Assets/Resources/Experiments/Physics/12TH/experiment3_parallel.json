@@ -36,7 +36,7 @@
         "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
         "Position": [-3.94, 0, -1.31],
         "Rotation": [0,0,0],
-        "Scale": [3,3,3],
+        "Scale": [5,5,5],
         "Interfaces": ["pos", "0"],
         "Parameters": [10.0]
     },
@@ -47,7 +47,7 @@
         "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat.",
         "Position": [-5.31, 1.07, 7.69],
         "Rotation": [0,-90,0],
-        "Scale": [2,2,2],
+        "Scale": [5,5,5],
         "Interfaces": ["pos", "Amm", "0"],
         "Parameters": [4.0e4]
     },
@@ -58,7 +58,7 @@
         "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
         "Position": [-0.94, 0, -2.08],
         "Rotation": [0,-90,0],
-        "Scale": [10,10,10],
+        "Scale": [15,15,15],
         "Interfaces": ["Amm", "Amm_Out"],
         "Parameters": [1.0e3, 1]
     },
@@ -68,9 +68,9 @@
         "Type": "PlugKey",
         "Title": "Plug Key",
         "Description": "This is a plug key",
-        "Position": [4.46, 0, 1.76],
+        "Position": [4.46, 0, 0],
         "Rotation": [0,-90,0],
-        "Scale": [1.5,1.5,1.5],
+        "Scale": [3,3,3],
         "Interfaces": ["Key2_out", "Amm_Out"],
         "Parameters": [3.0]
     },
@@ -80,9 +80,9 @@
         "Type": "Rheostat",
         "Title": "Rheostat -Resistancebox",
         "Description": "The most common way to vary the resistance in a circuit continuously is to use a Resistance box.",
-        "Position": [1.47, 3, 5.41],
+        "Position": [4.5, 1.07, 7.69],
         "Rotation": [0,-90,0],
-        "Scale": [2,2,2],
+        "Scale": [5,5,5],
         "Interfaces": ["0","Amm_Out","null"],
         "Parameters": [100]
     },
