@@ -49,6 +49,6 @@ public class WireResistor : CircuitComponent
         Circuit.isLabelWindowOpen = true;
         Circuit.componentTitle = Title;
         Circuit.componentDescription = Description;
-        Circuit.componentValue = string.Format("{0:0.##}", Resistance) + " OHM"+", "+ string.Format("{0:0.##}", wireLength)+" M, " + areaOfCrossSection + " M^2";
+        Circuit.componentValue = string.Format("{0:0.##}", Resistance) + " OHM"+", "+ string.Format("{0:0.##}", wireLength)+" M, " + string.Format("{0:0.######}", areaOfCrossSection) + " M^2";
     }
 }
