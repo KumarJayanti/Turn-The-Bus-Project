@@ -45,7 +45,7 @@
             "Description": "Provides a stable voltage to power the potentiometer wire, crucial for maintaining a constant potential gradient.",
             "Position": [-7.5, 0, -1.41],
             "Rotation": [0, 0, 0],
-            "Scale": [3, 3, 3],
+            "Scale": [5, 5, 5],
             "Interfaces": ["r2_pos", "r1_out"],
             "Parameters": [3.0]
         },
@@ -56,7 +56,7 @@
             "Description": "Supplies voltage to the primary circuit for the internal resistance measurement using the potentiometer.",
             "Position": [-7.5, 0.08, 0.98],
             "Rotation": [0, 0, 0],
-            "Scale": [3, 3, 3],
+            "Scale": [5, 5, 5],
             "Interfaces": ["r2_pos", "k1_out"],
             "Parameters": [1.1]
         },
@@ -67,7 +67,7 @@
             "Description": "Provides voltage to secondary parts of the circuit, assisting in controlling the overall experimental conditions.",
             "Position": [-7.5, 0.19, 2.95],
             "Rotation": [0, 0, 0],
-            "Scale": [3, 3, 3],
+            "Scale": [5, 5, 5],
             "Interfaces": ["r2_pos", "k2_out"],
             "Parameters": [1.5]
         },
@@ -78,7 +78,7 @@
             "Description": "Used to adjust the main current flowing through the potentiometer, crucial for setting the initial conditions of the experiment.",
             "Position": [-5.31, 1.07, 7.69],
             "Rotation": [0, -90, 0],
-            "Scale": [2, 2, 2],
+            "Scale": [5, 5, 5],
             "Interfaces": ["0", "r1_out", "r1_in"],
             "Parameters": [20]
         },
@@ -89,7 +89,7 @@
             "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
             "Position": [-0.94, 0, -0.91],
             "Rotation": [0, -90, 0],
-            "Scale": [10, 10, 10],
+            "Scale": [15, 15, 15],
             "Interfaces": ["Amm", "Amm_Out"],
             "Parameters": [1.0e3, 1]
         },
@@ -98,9 +98,9 @@
             "Type": "PlugKey",
             "Title": "Daniel Cell Control Key",
             "Description": "Allows for the circuit to be opened or closed, controlling the flow of electricity for the experiment.",
-            "Position": [8.23, 0.29, 1.76],
-            "Rotation": [0, -90, 0],
-            "Scale": [1.5, 1.5, 1.5],
+            "Position": [6.23, 0.1, 0],
+            "Rotation": [0, -180, 0],
+            "Scale": [3, 3, 3],
             "Interfaces": ["k1_out", "Amm"],
             "Parameters": [3.0]
         },
@@ -109,9 +109,9 @@
             "Type": "PlugKey",
             "Title": "Leclanche cell Control Key",
             "Description": "Used for additional control over secondary circuit elements, facilitating precise adjustments during measurements.",
-            "Position": [8.26, 0.28, 5.67],
-            "Rotation": [0, -90, 0],
-            "Scale": [1.5, 1.5, 1.5],
+            "Position": [6.23, 0.29, 4],
+            "Rotation": [0, -180, 0],
+            "Scale": [3, 3, 3],
             "Interfaces": ["k2_out", "Amm"],
             "Parameters": [3.0]
         },
@@ -122,7 +122,7 @@
             "Description": "Acts as a meter bridge by simulating resistance adjustments, specifically used for fine-tuning the measurements of the potentiometer setup.",
             "Position": [6.16, 1.24, 7.55],
             "Rotation": [0, -90, 0],
-            "Scale": [2, 2, 2],
+            "Scale": [5, 5, 5],
             "Interfaces": ["r1_in", "Amm_Out", "r2_pos"],
             "Parameters": [100]
         }

@@ -45,7 +45,7 @@
       "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
       "Position": [-4.56, 1, -1.58],
       "Rotation": [0, -90, 0],
-      "Scale": [4, 4, 4],
+      "Scale": [5, 5, 5],
       "Interfaces": ["pos", "Amm", "c2"],
       "Parameters": [100]
     },
@@ -76,7 +76,7 @@
       "Type": "Ammeter",
       "Title": "Ammeter",
       "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
-      "Position": [0.64, 0, 0.64],
+      "Position": [-2, 0, 3],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
       "Interfaces": ["Amm", "Amm_Out"],
@@ -88,8 +88,8 @@
       "Title": "Plug Key",
       "Description": "This is a plug key",
       "Position": [8.64, 0, 1.03],
-      "Rotation": [0, -90, 0],
-      "Scale": [2, 2, 2],
+      "Rotation": [0, -180, 0],
+      "Scale": [3, 3, 3],
       "Interfaces": ["Amm_Out", "Key2_out"],
       "Parameters": [3.0]
     },
@@ -100,7 +100,7 @@
       "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
       "Position": [-5.64, 0, 8.14],
       "Rotation": [0, 0, 0],
-      "Scale": [3, 3, 3],
+      "Scale": [4, 4, 4],
       "Interfaces": ["pos", "asd"],
       "Parameters": [5]
     },
@@ -120,9 +120,9 @@
       "Type": "Rheostat",
       "Title": "Rheostat",
       "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
-      "Position": [4.75, 1, 3.84],
+      "Position": [5.75, 1, 3.84],
       "Rotation": [0, -90, 0],
-      "Scale": [3, 3, 3],
+      "Scale": [5, 5, 5],
       "Interfaces": ["Key2_out", "pos", "NILL"],
       "Parameters": [10]
     }

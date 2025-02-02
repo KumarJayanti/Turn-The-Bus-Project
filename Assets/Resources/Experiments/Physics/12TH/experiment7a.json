@@ -43,9 +43,9 @@
             "Type": "Ammeter",
             "Title": "Ammeter",
             "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
-            "Position": [-4, 2.3, -1],
+            "Position": [-5, 2.3, -1],
             "Rotation": [0,-90,0],
-            "Scale": [10,10,10],
+            "Scale": [15,15,15],
             "Interfaces": ["pos", "gm_in"],
             "Parameters": [1.0e3,30.0]
         },
@@ -56,7 +56,7 @@
             "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
             "Position": [6, 2.45, 6.43],
             "Rotation": [0,-90,0],
-            "Scale": [3,3,3],
+            "Scale": [5,5,5],
             "Interfaces": ["key1_in", "gm_out", "nill"],
             "Parameters": [200.0] 
         },
@@ -67,7 +67,7 @@
             "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
             "Position": [0.94, 0, 1],
             "Rotation": [0,-89,0],
-            "Scale": [15,15,15],
+            "Scale": [20,20,20],
             "Interfaces": ["gm_in","gm_out"],
             "Parameters": [1.0e3,100.0]
         },
@@ -87,9 +87,9 @@
             "Type": "PlugKey",
             "Title": "Plug Key",
             "Description": "This is a plug key",
-            "Position": [-2, 0, 8.91],
+            "Position": [-3, 0, 6],
             "Rotation": [0,-90,0],
-            "Scale": [1.5,1.5,1.5], 
+            "Scale": [3,3,3], 
             "Interfaces": ["key1_in", "0"],
             "Parameters": [3.0]
         }
