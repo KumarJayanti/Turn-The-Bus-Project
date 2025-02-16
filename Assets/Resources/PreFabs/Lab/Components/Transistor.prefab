@@ -428,7 +428,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4087877974823328115}
   - component: {fileID: 6690692373036574919}
-  - component: {fileID: 3158108404622486981}
+  - component: {fileID: 4903183700360953825}
   m_Layer: 0
   m_Name: Transistor
   m_TagString: Untagged
@@ -479,7 +479,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25, y: 0.25, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3158108404622486981
+--- !u!114 &4903183700360953825
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8453959007216399693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c41a81bf2e29d874fab5caf4cae3096b, type: 3}
+  m_Script: {fileID: 11500000, guid: 71897ef427df5e04b8decd9fa7ba1316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
@@ -506,9 +506,9 @@ MonoBehaviour:
   EmitterNode: emitter
   sub: substrate
   model: 
-  collectorMaterial: {fileID: 2100000, guid: 245ea52a76f636745ae0bcdf888485a9, type: 2}
-  baseMaterial: {fileID: 2100000, guid: 245ea52a76f636745ae0bcdf888485a9, type: 2}
-  emitterMaterial: {fileID: 2100000, guid: 245ea52a76f636745ae0bcdf888485a9, type: 2}
+  collectorMaterial: {fileID: 0}
+  baseMaterial: {fileID: 0}
+  emitterMaterial: {fileID: 0}
   Collector: {fileID: 9192070651164439664}
   Base: {fileID: 5465238358292360230}
   Emitter: {fileID: 6236255316316026444}

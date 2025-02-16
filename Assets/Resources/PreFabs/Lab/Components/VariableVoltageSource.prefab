@@ -910,7 +910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5154491880762105054}
   - component: {fileID: 2761786850754813255}
-  - component: {fileID: 4134158614264640713}
+  - component: {fileID: 1161044989707839200}
   m_Layer: 0
   m_Name: VariableVoltageSource
   m_TagString: Untagged
@@ -960,7 +960,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.24, y: 0.45, z: 0.15}
   m_Center: {x: 0, y: 0.23, z: 0}
---- !u!114 &4134158614264640713
+--- !u!114 &1161044989707839200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -969,7 +969,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5531475473416423012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4286ddfb5ccdb745b55295960650eca, type: 3}
+  m_Script: {fileID: 11500000, guid: 32705a547d55c3f449524255ffc32da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
@@ -980,8 +980,7 @@ MonoBehaviour:
   connectors: []
   registeredCircuit: {fileID: 0}
   slider: {fileID: 2387646750259889143}
-  Ratio: 0.5
-  VoltageText: {fileID: 1386197053221367751}
+  Voltage: 0
 --- !u!1 &6543818069909998020
 GameObject:
   m_ObjectHideFlags: 0
