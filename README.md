@@ -7,7 +7,7 @@
 # How to Get Started
 
 - Setup [Unity](https://unity.com/) with version [ 2023.2.0b17 ](https://unity.com/releases/editor/beta/2023.2.0b17#installs)
-- Ask Sir KumarJayanti for getting the Contributar Access
+- Ask (bhagavati) kumar.jayanti@gmail.com for getting the Contributer Access
 - Clone the repo and Add it to Unity Hub
 - Go Through The Project and see the Current Status of 3D Mobile Project
 - We use git for version tracking code(not the default unity version controller)
