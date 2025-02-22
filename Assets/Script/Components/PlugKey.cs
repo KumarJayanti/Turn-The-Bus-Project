@@ -43,6 +43,10 @@ public class PlugKey : CircuitComponent
         if (!plugIn && PlugState)
         {
             spiceEntitys[0].SetParameter<double>("resistance", MaxResistance);
+            Circuit.isLabelWindowOpen = true;
+            Circuit.componentTitle = Title;
+            Circuit.componentDescription = Description;
+            Circuit.componentValue = "OFF";
             if (OnComponentChanged != null)
             {
                 OnComponentChanged(this, new EventArgs());
@@ -51,6 +55,10 @@ public class PlugKey : CircuitComponent
         else if (plugIn && !PlugState)
         {
             spiceEntitys[0].SetParameter<double>("resistance", MinResistance);
+            Circuit.isLabelWindowOpen = true;
+            Circuit.componentTitle = Title;
+            Circuit.componentDescription = Description;
+            Circuit.componentValue = "ON";
             if (OnComponentChanged != null)
             {
                 OnComponentChanged(this, new EventArgs());

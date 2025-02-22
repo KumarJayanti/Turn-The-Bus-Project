@@ -39,23 +39,13 @@ public class Voltmeter : CircuitComponent
         Circuit.isLabelWindowOpen = true;
         Circuit.componentTitle = Title;
         Circuit.componentDescription = Description;
-        Circuit.componentValue = (Indicator * Scale).ToString() + " V";
-        /*double scaledIndicator = Indicator * Scale;
+
+        double scaledIndicator = Indicator * Scale;
         string displayValue;
 
-        if (scaledIndicator >= 100000 || scaledIndicator <= -100000)
-        {
-            displayValue = string.Format("{0:0.##}", scaledIndicator / 1000000) + " V";
-        }
-        else if (scaledIndicator >= 100 || scaledIndicator <= -100)
-        {
-            displayValue = string.Format("{0:0.##}", scaledIndicator / 1000) + " mV";
-        }
-        else
-        {
-            displayValue = string.Format("{0:0.##}", scaledIndicator) + " µV";
-        }*/
+        if (scaledIndicator >= 100 || scaledIndicator <= -100) { displayValue = string.Format("{0:0.##}", scaledIndicator / 1000) + " V"; }
+        else { displayValue = string.Format("{0:0.##}", scaledIndicator) + " mV"; }
 
-        /*Circuit.componentValue = displayValue;*/
+        Circuit.componentValue = displayValue;
     }
 }

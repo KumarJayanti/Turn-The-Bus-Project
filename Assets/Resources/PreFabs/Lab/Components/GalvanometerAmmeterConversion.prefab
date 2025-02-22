@@ -112,7 +112,6 @@ GameObject:
   - component: {fileID: 5809313056649341357}
   - component: {fileID: 1201525224984006125}
   - component: {fileID: 6445922265559682212}
-  - component: {fileID: 2882678739926560899}
   m_Layer: 0
   m_Name: GalvanometerText
   m_TagString: Untagged
@@ -277,19 +276,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1201525224984006125}
   m_maskType: 0
---- !u!114 &2882678739926560899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956709136789051228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df7c288bfd64be2418c8cd4440586ecd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GalvanometerValue: {fileID: 0}
 --- !u!1 &1014102453950527738
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +340,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1580535799172915004, guid: 5539ae437a49c6b409fca94920e3fb34, type: 3}
+  - {fileID: 2100000, guid: 81086739c5057ad43a61dbdc6664417e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -486,7 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8237562787553036884}
   - component: {fileID: 4846372209714756408}
-  - component: {fileID: 6947862640387009415}
+  - component: {fileID: 8921034926119893968}
   m_Layer: 0
   m_Name: GalvanometerAmmeterConversion
   m_TagString: Untagged
@@ -543,7 +529,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.15494007, y: 0.14550745, z: 0.1893654}
   m_Center: {x: 0.001567468, y: 0.070978224, z: 0.00517489}
---- !u!114 &6947862640387009415
+--- !u!114 &8921034926119893968
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -552,7 +538,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1420537975713874807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fdebd3c16071c441813ea93039dd21c, type: 3}
+  m_Script: {fileID: 11500000, guid: 983930202e04f4b4a9b71d5b809e553f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
@@ -969,7 +955,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1580535799172915004, guid: 5539ae437a49c6b409fca94920e3fb34, type: 3}
+  - {fileID: 2100000, guid: 81086739c5057ad43a61dbdc6664417e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1259,7 +1245,7 @@ GameObject:
   - component: {fileID: 4726905733620773187}
   - component: {fileID: 5427882853593399845}
   - component: {fileID: 8210623222940985861}
-  - component: {fileID: 3847893657738850930}
+  - component: {fileID: 4952816834609809758}
   m_Layer: 0
   m_Name: Galvanometer Current Value
   m_TagString: Untagged
@@ -1424,7 +1410,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 5427882853593399845}
   m_maskType: 0
---- !u!114 &3847893657738850930
+--- !u!114 &4952816834609809758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1433,7 +1419,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9063691396542734780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfae17ae045a41545b3bc5cc139aa97c, type: 3}
+  m_Script: {fileID: 11500000, guid: 61fb0e606dff5e04f94ec8672419c49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmmeterValue: {fileID: 0}
+  GalvanometerValue: {fileID: 0}

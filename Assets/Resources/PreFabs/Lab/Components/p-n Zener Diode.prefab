@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4573040221538650339}
   - component: {fileID: 4028536959087059547}
-  - component: {fileID: 7574952174435796220}
+  - component: {fileID: 5191856388142422181}
   m_Layer: 0
   m_Name: p-n Zener Diode
   m_TagString: Untagged
@@ -61,7 +61,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.79658717, y: 0.2742179, z: 0.26219893}
   m_Center: {x: 0.010842283, y: -0.004924933, z: -0.016602127}
---- !u!114 &7574952174435796220
+--- !u!114 &5191856388142422181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 135264762789596375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc72367989fcbc449a57a9f8b11d28b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 77136d8e8ebad1948b31c3f4ad09dd6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
