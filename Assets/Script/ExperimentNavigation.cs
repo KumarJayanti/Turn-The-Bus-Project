@@ -7,12 +7,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Networking; // Required for UnityWebRequest
+using System.Web; // Needed for query parsing
+
  
 public class ExperimentNavigation : MonoBehaviour
 {
     public TextAsset manualJSON;
     public Button prefeb_labButton;
     public Transform parent;
+    private string deepLinkExperimentId = null;
+    private string lastHandledUrl = null;
+    private static bool hasHandledDeepLink = false;
+
+
+
 
     [System.Serializable] public class Experiment
     {
@@ -58,8 +66,63 @@ IEnumerator LoadImage(string filePath, RawImage buttonImg)
     }
 }
 
+void Start()
+{
+    // Hook deep link events
+    Application.deepLinkActivated += OnDeepLinkActivated;
+
+    // Cold start
+    if (!string.IsNullOrEmpty(Application.absoluteURL) && !hasHandledDeepLink)
+    {
+        Debug.Log("🌐 Handling cold-start deep link: " + Application.absoluteURL);
+        OnDeepLinkActivated(Application.absoluteURL);
+    }
+
+    // Load experiment buttons from JSON
+    Experiments = JsonUtility.FromJson<ExperimentList>(manualJSON.text);
+    TryLaunchDeepLinkedExperiment();
+
+    float height = -180f;
+    float width = -659f;
+
+    foreach (Experiment experiment in Experiments.Experiments)
+    {
+        Button btn = Instantiate(prefeb_labButton);
+        btn.transform.SetParent(parent, false);
+        btn.transform.position = new Vector3(width, height, 0);
+        btn.GetComponent<RectTransform>().sizeDelta = new Vector2(327.8f, 48.2f);
+        width += 450f;
+
+        TextMeshProUGUI buttonText = btn.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI buttonDescription = btn.transform.Find("Text (TMP) (1)").GetComponentInChildren<TextMeshProUGUI>();
+        RawImage buttonImg = btn.transform.GetChild(2).GetComponent<RawImage>();
+
+        try
+        {
+            var captured = experiment;  // Required to close over the right experiment
+            btn.onClick.AddListener(() => loadScene(captured.ExperimentType, captured.ExperimentJSON));
+            buttonText.text = "Experiment " + experiment.ExperimentNumber;
+            buttonText.fontSize = 24;
+            buttonDescription.text = experiment.ExperimentTitle;
+            buttonDescription.fontSize = 24;
+
+            StartCoroutine(LoadImage(experiment.ExperimentPic, buttonImg));
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError($"Error loading experiment button: {ex.Message}");
+        }
+    }
+
+    // Trigger deep link loading if applicable
+    TryLaunchDeepLinkedExperiment();  // will internally check if ID is set
+
     
+}
+
+
     // Start is called before the first frame update
+    /*
   void Start()
 {
     Experiments = JsonUtility.FromJson<ExperimentList>(manualJSON.text);
@@ -89,14 +152,7 @@ IEnumerator LoadImage(string filePath, RawImage buttonImg)
 
             // Load and set button image
             StartCoroutine(LoadImage(experiment.ExperimentPic, buttonImg));
-            /*
-            string imagePath = Path.Combine(Application.streamingAssetsPath, experiment.ExperimentPic);
-            byte[] imageBytes = File.ReadAllBytes(imagePath);
-            //byte[] imageBytes = File.ReadAllBytes(experiment.ExperimentPic);
-            Texture2D tex = new Texture2D(2, 2);
-            tex.LoadImage(imageBytes);
-            buttonImg.texture = tex;
-            */
+            
         }
         catch (Exception ex)
         {
@@ -111,7 +167,7 @@ IEnumerator LoadImage(string filePath, RawImage buttonImg)
     }
 }
 
-
+*/
  
     void loadScene(string sceneName, string json)
     {
@@ -120,8 +176,62 @@ IEnumerator LoadImage(string filePath, RawImage buttonImg)
     }
 
     // Update is called once per frame
-    void Update()
+   void Update()
+{
+    // Workaround: detect new deep links even when Unity doesn't trigger the event
+    if (!string.IsNullOrEmpty(Application.absoluteURL) && Application.absoluteURL != lastHandledUrl)
     {
-        
+        Debug.Log("🔍 Manually detecting deep link from absoluteURL: " + Application.absoluteURL);
+        lastHandledUrl = Application.absoluteURL;
+        OnDeepLinkActivated(Application.absoluteURL);
     }
+}
+
+
+    void OnDeepLinkActivated(string url)
+{
+    Debug.Log("🔗 Deep link received: " + url);
+    if (hasHandledDeepLink)
+    {
+        Debug.Log("⏩ Deep link already handled, ignoring: " + url);
+        return;
+    }
+
+    hasHandledDeepLink = true;
+    try
+    {
+        Uri uri = new Uri(url);
+        var query = HttpUtility.ParseQueryString(uri.Query);
+        deepLinkExperimentId = query["id"];
+        Debug.Log("🔗 Received deep link for experiment ID: " + deepLinkExperimentId);
+
+        TryLaunchDeepLinkedExperiment();
+    }
+    catch (Exception e)
+    {
+        Debug.LogError("Failed to parse deep link: " + e);
+    }
+}
+
+ void TryLaunchDeepLinkedExperiment()
+{
+    if (string.IsNullOrEmpty(deepLinkExperimentId) || Experiments == null)
+        return;
+
+    foreach (Experiment exp in Experiments.Experiments)
+    {
+        if (exp.ExperimentNumber.ToString() == deepLinkExperimentId)
+        {
+            Debug.Log($"🚀 Launching experiment from deep link: {exp.ExperimentTitle}");
+            loadScene(exp.ExperimentType, exp.ExperimentJSON);
+
+            // Clear it so it doesn't keep re-triggering
+            deepLinkExperimentId = null;
+            return;
+        }
+    }
+
+    Debug.LogWarning("No experiment found for ID: " + deepLinkExperimentId);
+}
+
 }
