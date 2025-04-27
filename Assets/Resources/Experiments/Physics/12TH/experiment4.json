@@ -41,7 +41,7 @@
     {
       "Name": "Vaux",
       "Type": "VoltageSource",
-      "Title": "Auxiliary Voltage Source",
+      "Title": "(E)Auxiliary Voltage Source",
       "Description": "Provides a stable voltage to power the potentiometer wire, crucial for maintaining a constant potential gradient.",
       "Position": [-7.5, 0, -1.41],
       "Rotation": [0, 0, 0],
@@ -52,7 +52,7 @@
     {
       "Name": "V1",
       "Type": "VoltageSource",
-      "Title": "Daniel Cell",
+      "Title": "(E1)Daniel Cell",
       "Description": "Supplies voltage to the primary circuit for the internal resistance measurement using the potentiometer.",
       "Position": [-7.5, 0.08, 0.98],
       "Rotation": [0, 0, 0],
@@ -63,7 +63,7 @@
     {
       "Name": "V2",
       "Type": "VoltageSource",
-      "Title": "Leclanche cell",
+      "Title": "(E2)Leclanche cell",
       "Description": "Provides voltage to secondary parts of the circuit, assisting in controlling the overall experimental conditions.",
       "Position": [-7.5, 0.19, 2.95],
       "Rotation": [0, 0, 0],
@@ -74,7 +74,7 @@
     {
       "Name": "RS1",
       "Type": "Rheostat",
-      "Title": "Main Circuit Rheostat",
+      "Title": "(Rh)Main Circuit Rheostat",
       "Description": "Used to adjust the main current flowing through the potentiometer, crucial for setting the initial conditions of the experiment.",
       "Position": [-5.31, 1.07, 7.69],
       "Rotation": [0, -90, 0],
@@ -84,19 +84,19 @@
     },
     {
       "Name": "Am1",
-      "Type": "Ammeter",
-      "Title": "Circuit Ammeter",
+      "Type": "CurrentMeasure",
+      "Title": "Galvanometer",
       "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
       "Position": [-0.94, 0, -0.91],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
       "Interfaces": ["Amm", "Amm_Out"],
-      "Parameters": [1.0e3, 1]
+      "Parameters": [1.0e3, 1, 0.05]
     },
     {
       "Name": "K1",
       "Type": "PlugKey",
-      "Title": "Daniel Cell Control Key",
+      "Title": "(a)Daniel Cell Control Key",
       "Description": "Allows for the circuit to be opened or closed, controlling the flow of electricity for the experiment.",
       "Position": [6.23, 0.1, 0],
       "Rotation": [0, -180, 0],
@@ -107,7 +107,7 @@
     {
       "Name": "K2",
       "Type": "PlugKey",
-      "Title": "Leclanche cell Control Key",
+      "Title": "(b)Leclanche cell Control Key",
       "Description": "Used for additional control over secondary circuit elements, facilitating precise adjustments during measurements.",
       "Position": [6.23, 0.29, 4],
       "Rotation": [0, -180, 0],
@@ -118,7 +118,7 @@
     {
       "Name": "RS2",
       "Type": "Rheostat",
-      "Title": "Rheostat",
+      "Title": "(AJ = l)Meter Bridge",
       "Description": "Acts as a meter bridge by simulating resistance adjustments, specifically used for fine-tuning the measurements of the potentiometer setup.",
       "Position": [6.16, 1.24, 7.55],
       "Rotation": [0, -90, 0],
