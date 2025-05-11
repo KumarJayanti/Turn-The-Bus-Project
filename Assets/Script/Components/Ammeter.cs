@@ -1,4 +1,5 @@
 using SpiceSharp;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -40,20 +41,26 @@ public class Ammeter : CircuitComponent
 
     private void OnMouseDown()
     {
+        System.Random random = new System.Random();
+        float minValue = -0.05f;
+        float maxValue = 0.05f;
+
+        float randomFloat = (float)(random.NextDouble() * (maxValue - minValue) + minValue);
+
         Circuit.isLabelWindowOpen = true;
         Circuit.componentTitle = Title;
         Circuit.componentDescription = Description;
         if (this.Indicator * this.Scale >= 100 || this.Indicator * this.Scale <= -100)
         {
-            Circuit.componentValue = string.Format("{0:0.##}", this.Indicator * this.Scale / 1000) + " A";
+            Circuit.componentValue = string.Format("{0:0.##}", (this.Indicator * this.Scale / 1000)+randomFloat*(this.Indicator * this.Scale / 1000)) + " A";
         }
         else if (this.Indicator * this.Scale > 0.001 || this.Indicator * this.Scale < -0.001)
         {
-            Circuit.componentValue = string.Format("{0:0.##}", this.Indicator * this.Scale) + " mA";
+            Circuit.componentValue = string.Format("{0:0.##}", (this.Indicator * this.Scale)+ randomFloat * (this.Indicator * this.Scale)) + " mA";
         }
         else
         {
-            Circuit.componentValue = string.Format("{0:0.##}", this.Indicator * this.Scale * 1e3) + " \u03bcA";
+            Circuit.componentValue = string.Format("{0:0.##}", (this.Indicator * this.Scale * 1e3) + randomFloat * (this.Indicator * this.Scale * 1e3)) + " \u03bcA";
         }
 
     }

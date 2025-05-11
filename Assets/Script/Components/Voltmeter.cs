@@ -43,9 +43,9 @@ public class Voltmeter : CircuitComponent
         double scaledIndicator = Indicator * Scale;
         string displayValue;
 
-        if (scaledIndicator >= 100 || scaledIndicator <= -100) { displayValue = string.Format("{0:0.##}", scaledIndicator / 1000) + " V"; }
-        else { displayValue = string.Format("{0:0.##}", scaledIndicator) + " mV"; }
-
+        //if (scaledIndicator >= 100 || scaledIndicator <= -100) { displayValue = string.Format("{0:0.##}", (scaledIndicator / 1000)) + " V"; }
+        //else { displayValue = string.Format("{0:0.##}", scaledIndicator) + " mV"; }
+        displayValue = string.Format("{0:0.##}", scaledIndicator) + " V";
         Circuit.componentValue = displayValue;
     }
 }
