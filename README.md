@@ -23,5 +23,6 @@
 
 
 ### Introduction
+- [Deck](https://docs.google.com/presentation/d/1hmmY44PRtxb647LPTikhCH9t7TfRB2ar/edit?usp=sharing&ouid=110394023369216137126&rtpof=true&sd=true)
 - [Video](https://drive.google.com/file/d/1oXgydY2Se3cJZ3_1piTcsqX1HR-cAUeo/view?usp=sharing)
 
