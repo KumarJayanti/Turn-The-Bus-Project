@@ -10,7 +10,7 @@
     "A cell"
   ],
   "Theory": "",
-  "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment3.png",
+  "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment3p.png",
   "Procedure": [
     "Set up the circuit as shown in Fig. E 3.1.",
     "Tighten all plugs in the resistance box by rotating and pressing each plug to ensure that all plugs make good electrical contacts. Clean the ends of connecting wires using sandpaper before making the connections.",
@@ -99,7 +99,7 @@
       "Name": "Am1",
       "Type": "CurrentMeasure",
       "Title": "Galvanometer",
-      "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+      "Description": "An Galvanometer is an instrument used to measure the current in a circuit with Direction. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
       "Position": [-0.87, 0, 4.8],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],

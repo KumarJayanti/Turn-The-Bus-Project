@@ -99,7 +99,7 @@
       "Name": "Am1",
       "Type": "CurrentMeasure",
       "Title": "Galvanometer",
-      "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+      "Description": "An Galvanometer is an instrument used to measure the current in a circuit with Direction. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
       "Position": [-0.87, 0, 4.8],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
