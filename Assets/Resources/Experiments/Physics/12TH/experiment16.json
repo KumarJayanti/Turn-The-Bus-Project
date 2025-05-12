@@ -38,7 +38,7 @@
       "Type": "VariableVoltage",
       "Title": "VariableVoltage",
       "Description": "VariableVoltage",
-      "Position": [-0.32, 2.3, -3.16],
+      "Position": [-0.2, 2.3, -2.47],
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
       "Interfaces": ["pos", "0", "pos1", "0"],
@@ -49,10 +49,10 @@
       "Type": "PlugKey",
       "Title": "Plug Key",
       "Description": "This is a plug key",
-      "Position": [-6.24, 0, -0.48],
+      "Position": [-8.59, 0, 0.23],
       "Rotation": [0, -90, 0],
-      "Scale": [3, 3, 3],
-      "Interfaces": ["ko", "pos"],
+      "Scale": [2, 2, 2],
+      "Interfaces": ["pos", "c3_out"],
       "Parameters": [3.0]
     },
     {
@@ -68,36 +68,47 @@
     },
     {
       "Name": "Am1",
-      "Type": "Ammeter",
+      "Type": "CurrentMeasure",
       "Title": "Ammeter",
-      "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
-      "Position": [7.75, 0, 5.04],
+      "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
+      "Position": [7.75, 0, 8.45],
       "Rotation": [0, -90, 0],
       "Scale": [20, 20, 20],
       "Interfaces": ["amo", "ami"],
-      "Parameters": [1.0e3, 1]
+      "Parameters": [1.0e3, 1, 0.01]
     },
     {
       "Name": "Vm",
       "Type": "Voltmeter",
       "Title": "Voltmeter",
       "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
-      "Position": [-0.83, 2.3, 3.61],
+      "Position": [-4.63, 2.3, 5.54],
       "Rotation": [0, -90, 0],
       "Scale": [18, 18, 18],
-      "Interfaces": ["ko", "amo"],
-      "Parameters": [1, 1.0e28]
+      "Interfaces": ["c2_out", "amo"],
+      "Parameters": [1, 1.0e8]
     },
     {
       "Name": "D1",
       "Type": "Diode",
       "Title": "Diode",
       "Description": "Diode",
-      "Position": [-0.45, 2.3, 1.65],
+      "Position": [-4.72, 2.3, 2.61],
       "Rotation": [0, -90, 0],
       "Scale": [1, 2, 2],
-      "Interfaces": ["ko", "amo"],
+      "Interfaces": ["c1_out", "amo"],
       "Parameters": ["nill"]
+    },
+    {
+      "Name": "Connect1",
+      "Type": "Connector",
+      "Title": "Rheostat",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [-10.73, 0, 7.3],
+      "Rotation": [0, -90, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["c1_out", "c2_out", "c3_out", "nill1"],
+      "Parameters": [0]
     }
   ]
 }

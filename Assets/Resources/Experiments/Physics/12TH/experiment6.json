@@ -32,77 +32,87 @@
       "Type": "VoltageSource",
       "Title": "Voltage Source",
       "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
-      "Position": [-7.5, 0, 6.64],
+      "Position": [-9.87, 0, 9.17],
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
       "Interfaces": ["pos", "0"],
-      "Parameters": [2.0]
+      "Parameters": [20.0]
     },
     {
       "Name": "Connect1",
       "Type": "Connector",
       "Title": "Connector",
       "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
-      "Position": [-5.62, 2.45, 1.36],
+      "Position": [-8.4, 2.45, 1.36],
       "Rotation": [0, -90, 0],
       "Scale": [0.2, 0.2, 0.2],
       "Interfaces": ["pos", "gm_in", "rh2_in", "nill2"],
       "Parameters": [0]
     },
-
     {
-      "Name": "Gm",
-      "Type": "Galvanometer",
+      "Name": "Am1",
+      "Type": "CurrentMeasure",
       "Title": "Galvanometer",
-      "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
-      "Position": [2, 0, 3],
+      "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
+      "Position": [-1.26, 0, 3],
       "Rotation": [0, -90, 0],
-      "Scale": [20, 20, 20],
+      "Scale": [15, 15, 15],
       "Interfaces": ["gm_in", "gm_out"],
-      "Parameters": [1.0e3, 100.0]
+      "Parameters": [1.0e3, 1, 0.01]
+    },
+    {
+      "Name": "W1",
+      "Type": "WireResistance",
+      "Title": "(R1)Resistor",
+      "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+      "Position": [-1.26, 0, 3],
+      "Rotation": [0, -90, 0],
+      "Scale": [1, 1, 1],
+      "Interfaces": ["gm_out", "w1_out"],
+      "Parameters": [1e-3, 1e-2, 0.1]
     },
     {
       "Name": "RS1",
       "Type": "Rheostat",
-      "Title": "Rheostat",
+      "Title": "R(Box)_1",
       "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
-      "Position": [0, 2.45, 6.43],
+      "Position": [-0.78, 2.45, 7.11],
       "Rotation": [0, -90, 0],
-      "Scale": [5, 5, 5],
+      "Scale": [6.11, 3.58, 3.67],
       "Interfaces": ["0", "key1_out", "nill"],
-      "Parameters": [10000]
+      "Parameters": [100]
     },
     {
       "Name": "Connect2",
       "Type": "Connector",
       "Title": "Rheostat",
       "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
-      "Position": [5.62, 0, 1.36],
+      "Position": [6.15, 0, 3.76],
       "Rotation": [0, -90, 0],
       "Scale": [0.2, 0.2, 0.2],
-      "Interfaces": ["gm_out", "key2_out", "key1_in", "nill3"],
+      "Interfaces": ["w1_out", "key2_out", "key1_in", "nill3"],
       "Parameters": [0]
     },
     {
       "Name": "RS2",
       "Type": "Rheostat",
-      "Title": "Rheostat",
+      "Title": "R(Box)_2",
       "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
-      "Position": [-2, 1, -1],
+      "Position": [-1.88, 1, -1.67],
       "Rotation": [0, -90, 0],
-      "Scale": [5, 5, 5],
+      "Scale": [6.06, 3.88, 4.5],
       "Interfaces": ["rh2_in", "rh2_out", "nill4"],
-      "Parameters": [2.0e2]
+      "Parameters": [10]
     },
 
     {
       "Name": "K2",
       "Type": "PlugKey",
-      "Title": "Plug Key",
+      "Title": "Key_2",
       "Description": "This is a plug key",
-      "Position": [6, 0, -1],
-      "Rotation": [0, 0, 0],
-      "Scale": [3, 3, 3],
+      "Position": [7.37, 0, 0.15],
+      "Rotation": [0, -180, 0],
+      "Scale": [2.52, 2.91, 2.08],
       "Interfaces": ["key2_out", "rh2_out"],
       "Parameters": [3.0]
     },
@@ -110,12 +120,12 @@
     {
       "Name": "K1",
       "Type": "PlugKey",
-      "Title": "Plug Key",
+      "Title": "Key_1",
       "Description": "This is a plug key",
-      "Position": [9, 0, 8.91],
+      "Position": [8.16, 0, 6.82],
       "Rotation": [0, -180, 0],
-      "Scale": [3, 3, 3],
-      "Interfaces": ["key1_in", "key1_out"],
+      "Scale": [2.72, 2.72, 2.27],
+      "Interfaces": ["key1_out", "key1_in"],
       "Parameters": [3.0]
     }
   ]

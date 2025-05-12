@@ -43,21 +43,54 @@
       "Type": "VoltageSource",
       "Title": "(E)Auxiliary Voltage Source",
       "Description": "Provides a stable voltage to power the potentiometer wire, crucial for maintaining a constant potential gradient.",
-      "Position": [-7.5, 0, -1.41],
+      "Position": [6.95, 0, 7.99],
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
       "Interfaces": ["r2_pos", "r1_out"],
       "Parameters": [3.0]
     },
     {
+      "Name": "Connector1",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [9.2, 0.99, 7.21],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["r1_out", "c1_out", "nill1", "nill2"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "RS1",
+      "Type": "Rheostat",
+      "Title": "(AJ = l)Meter Bridge",
+      "Description": "Used to adjust the main current flowing through the potentiometer, crucial for setting the initial conditions of the experiment.",
+      "Position": [6.29, 1.07, 0.13],
+      "Rotation": [0, -90, 0],
+      "Scale": [4.61, 3.75, 4.46],
+      "Interfaces": ["0", "Amm_Out", "c1_out"],
+      "Parameters": [20]
+    },
+    {
+      "Name": "Connector2",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [3.32, 0.99, 7.87],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["0", "r2_pos", "c5_out", "c6_out"],
+      "Parameters": [0]
+    },
+    {
       "Name": "V1",
       "Type": "VoltageSource",
       "Title": "(E1)Daniel Cell",
       "Description": "Supplies voltage to the primary circuit for the internal resistance measurement using the potentiometer.",
-      "Position": [-7.5, 0.08, 0.98],
+      "Position": [0.17, 0.08, 6.19],
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
-      "Interfaces": ["r2_pos", "k1_out"],
+      "Interfaces": ["d", "c5_out"],
       "Parameters": [1.1]
     },
     {
@@ -65,32 +98,21 @@
       "Type": "VoltageSource",
       "Title": "(E2)Leclanche cell",
       "Description": "Provides voltage to secondary parts of the circuit, assisting in controlling the overall experimental conditions.",
-      "Position": [-7.5, 0.19, 2.95],
+      "Position": [-1.76, 0.19, 9.32],
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
-      "Interfaces": ["r2_pos", "k2_out"],
+      "Interfaces": ["l", "c6_out"],
       "Parameters": [1.5]
-    },
-    {
-      "Name": "RS1",
-      "Type": "Rheostat",
-      "Title": "(Rh)Main Circuit Rheostat",
-      "Description": "Used to adjust the main current flowing through the potentiometer, crucial for setting the initial conditions of the experiment.",
-      "Position": [-5.31, 1.07, 7.69],
-      "Rotation": [0, -90, 0],
-      "Scale": [5, 5, 5],
-      "Interfaces": ["0", "r1_out", "r1_in"],
-      "Parameters": [20]
     },
     {
       "Name": "Am1",
       "Type": "CurrentMeasure",
       "Title": "Galvanometer",
       "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
-      "Position": [-0.94, 0, -0.91],
+      "Position": [0.09, 0, -0.35],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
-      "Interfaces": ["Amm", "Amm_Out"],
+      "Interfaces": ["c8_out", "Amm_Out"],
       "Parameters": [1.0e3, 1, 0.05]
     },
     {
@@ -98,10 +120,10 @@
       "Type": "PlugKey",
       "Title": "(a)Daniel Cell Control Key",
       "Description": "Allows for the circuit to be opened or closed, controlling the flow of electricity for the experiment.",
-      "Position": [6.23, 0.1, 0],
-      "Rotation": [0, -180, 0],
-      "Scale": [3, 3, 3],
-      "Interfaces": ["k1_out", "Amm"],
+      "Position": [-1.94, 0.1, 5.01],
+      "Rotation": [0, 90, 0],
+      "Scale": [2.22, 2.61, 1.4],
+      "Interfaces": ["c4_out", "d"],
       "Parameters": [3.0]
     },
     {
@@ -109,22 +131,55 @@
       "Type": "PlugKey",
       "Title": "(b)Leclanche cell Control Key",
       "Description": "Used for additional control over secondary circuit elements, facilitating precise adjustments during measurements.",
-      "Position": [6.23, 0.29, 4],
-      "Rotation": [0, -180, 0],
-      "Scale": [3, 3, 3],
-      "Interfaces": ["k2_out", "Amm"],
+      "Position": [-5.07, 0.29, 9.27],
+      "Rotation": [0, 90, 0],
+      "Scale": [2.22, 2.61, 1.4],
+      "Interfaces": ["c3_out", "l"],
       "Parameters": [3.0]
+    },
+    {
+      "Name": "Connector3",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [-9.59, 0.99, 5.75],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["c2_out", "c3_out", "c4_out", "nill6"],
+      "Parameters": [0]
     },
     {
       "Name": "RS2",
       "Type": "Rheostat",
-      "Title": "(AJ = l)Meter Bridge",
+      "Title": "R_box",
       "Description": "Acts as a meter bridge by simulating resistance adjustments, specifically used for fine-tuning the measurements of the potentiometer setup.",
-      "Position": [6.16, 1.24, 7.55],
+      "Position": [-5.97, 1.24, -0.82],
       "Rotation": [0, -90, 0],
-      "Scale": [5, 5, 5],
-      "Interfaces": ["r1_in", "Amm_Out", "r2_pos"],
-      "Parameters": [100]
+      "Scale": [4.36, 3.15, 3.42],
+      "Interfaces": ["c7_out", "c2_out", "nill5"],
+      "Parameters": [50]
+    },
+    {
+      "Name": "Connector4",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [-3.26, 0.99, -3.68],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["c7_out", "c8_out", "nill7", "nill8"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "K3",
+      "Type": "PlugKey",
+      "Title": "K2",
+      "Description": "Used for additional control over secondary circuit elements, facilitating precise adjustments during measurements.",
+      "Position": [-6.53, 0.29, 2.99],
+      "Rotation": [0, 90, 0],
+      "Scale": [2.22, 2.61, 1.4],
+      "Interfaces": ["c2_out", "c7_out"],
+      "Parameters": [3.0]
     }
   ]
 }
