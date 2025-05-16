@@ -472,7 +472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8237562787553036884}
   - component: {fileID: 4846372209714756408}
-  - component: {fileID: 5698783629617841824}
+  - component: {fileID: 4824556652054594450}
   m_Layer: 0
   m_Name: CurrentMeasure
   m_TagString: Untagged
@@ -529,7 +529,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.15494007, y: 0.14550745, z: 0.1893654}
   m_Center: {x: 0.001567468, y: 0.070978224, z: 0.00517489}
---- !u!114 &5698783629617841824
+--- !u!114 &4824556652054594450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -538,7 +538,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1420537975713874807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d4a9044fc1305d418583774fe3ca9f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c403211830ab084a864df9ff922327e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
@@ -1245,8 +1245,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4726905733620773187}
   - component: {fileID: 5427882853593399845}
-  - component: {fileID: 6436061710638045903}
   - component: {fileID: 8210623222940985861}
+  - component: {fileID: 6905467179915859423}
   m_Layer: 0
   m_Name: Ammeter Current Value
   m_TagString: Untagged
@@ -1317,19 +1317,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6436061710638045903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9063691396542734780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a1c24b8b86b044e90b7243d2db8059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AmmeterValue: {fileID: 8210623222940985861}
 --- !u!114 &8210623222940985861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1424,3 +1411,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 5427882853593399845}
   m_maskType: 0
+--- !u!114 &6905467179915859423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063691396542734780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fa7fbf4737d0c4ebf0a9b14e8a98b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmmeterValue: {fileID: 6445922265559682212}
