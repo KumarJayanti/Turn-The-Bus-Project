@@ -42,12 +42,12 @@
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
       "Interfaces": ["pos", "0", "pos1", "0"],
-      "Parameters": [-1000, 1]
+      "Parameters": [-100, 1]
     },
     {
       "Name": "K1",
       "Type": "PlugKey",
-      "Title": "Plug Key",
+      "Title": "Plug Key (K)",
       "Description": "This is a plug key",
       "Position": [-8.59, 0, 0.23],
       "Rotation": [0, -90, 0],
@@ -68,14 +68,14 @@
     },
     {
       "Name": "Am1",
-      "Type": "CurrentMeasure",
+      "Type": "Ammeter",
       "Title": "Ammeter",
       "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
       "Position": [7.75, 0, 8.45],
       "Rotation": [0, -90, 0],
       "Scale": [20, 20, 20],
       "Interfaces": ["amo", "ami"],
-      "Parameters": [1.0e3, 1, 0.01]
+      "Parameters": [1.0e3, 1]
     },
     {
       "Name": "Vm",
