@@ -39,7 +39,7 @@
       "Rotation": [0, 0, 0],
       "Scale": [7, 7, 7],
       "Interfaces": ["pos", "0", "pos1", "0"],
-      "Parameters": [0.0, 15.0]
+      "Parameters": [-1, 10]
     },
     {
       "Name": "RS1",
@@ -50,7 +50,7 @@
       "Rotation": [0, -90, 0],
       "Scale": [5, 5, 5],
       "Interfaces": ["0", "asd", "Key2_out"],
-      "Parameters": [300]
+      "Parameters": [700]
     },
     {
       "Name": "Am1",
@@ -60,8 +60,8 @@
       "Position": [9.96, 0, 2.47],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
-      "Interfaces": ["Key2_out", "cath"],
-      "Parameters": [1.0e6, 1]
+      "Interfaces": ["Key2_out", "ane"],
+      "Parameters": [1.0e3, 1]
     },
     {
       "Name": "R1",
@@ -71,8 +71,8 @@
       "Position": [-4.93, 0, 9.83],
       "Rotation": [0, -90, 0],
       "Scale": [2, 2, 2],
-      "Interfaces": ["asd", "ane"],
-      "Parameters": [1, 0, 1, 0]
+      "Interfaces": ["asd", "cath"],
+      "Parameters": [3, 0, 1, 0]
     },
     {
       "Name": "dz",

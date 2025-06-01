@@ -26,8 +26,9 @@ public class ZenerDiode : CircuitComponent
     public const string MATERIAL_PATH = "Materials/Diode materials/";
     private static int diodeCounter = 0;
 
-    public float BreakdownVoltage = 10.0f; // Default breakdown voltage
-    public float ReverseSaturationCurrent = 1e-14f; // Default saturation current
+    public float BreakdownVoltage = 6.5f; // Default breakdown voltage
+    public float ReverseSaturationCurrent = 1e-16f; // Default saturation current
+    public float CurrentAtBreakdown = 5e-3f;
     public string AnodeNode = "anode";
     public string CathodeNode = "cathode";
     public string model;
@@ -68,6 +69,8 @@ public class ZenerDiode : CircuitComponent
         var zenerModel = new DiodeModel(uniqueModelName);
         zenerModel.SetParameter("bv", (double)BreakdownVoltage);
         zenerModel.SetParameter("is", (double)ReverseSaturationCurrent);
+        zenerModel.SetParameter("ibv", (double)CurrentAtBreakdown);
+        zenerModel.SetParameter("rs", 5.0);
 
         // Add the model to the entities list
         spiceEntitys.Add(zenerModel);

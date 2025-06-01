@@ -25,7 +25,7 @@
       "ExperimentNumber": 3.2,
       "ExperimentType": "ElectricalLab",
       "ExperimentTitle": "To verify the laws of combination of resistances (parallel) using a metre bridge",
-      "ExperimentPic": "experiment3.png",
+      "ExperimentPic": "experiment3p.png",
       "ExperimentJSON": "Experiments/Physics/12TH/experiment3_parallel"
     },
     {
@@ -46,21 +46,21 @@
       "ExperimentNumber": 6,
       "ExperimentType": "ElectricalLab",
       "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
-      "ExperimentPic": "experiment5.png",
+      "ExperimentPic": "experiment6.png",
       "ExperimentJSON": "Experiments/Physics/12TH/experiment6"
     },
     {
       "ExperimentNumber": 7.1,
       "ExperimentType": "ElectricalLab",
       "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
-      "ExperimentPic": "experiment5.png",
+      "ExperimentPic": "experiment7.png",
       "ExperimentJSON": "Experiments/Physics/12TH/experiment7b"
     },
     {
       "ExperimentNumber": 7.2,
       "ExperimentType": "ElectricalLab",
       "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
-      "ExperimentPic": "experiment5.png",
+      "ExperimentPic": "experiment7.png",
       "ExperimentJSON": "Experiments/Physics/12TH/experiment7a"
     },
     {
@@ -74,28 +74,28 @@
       "ExperimentNumber": 10,
       "ExperimentType": "OpticalLab10",
       "ExperimentTitle": "To find the focal length of a convex lens by plotting graphs between,‘u’ and ‘v’ or ‘1/u’ and ‘1/v’.",
-      "ExperimentPic": "experiment9.png",
+      "ExperimentPic": "experiment10.png",
       "ExperimentJSON": "-"
     },
     {
       "ExperimentNumber": 11,
       "ExperimentType": "OpticalLab11",
       "ExperimentTitle": "To find the focal length of a convex mirror using a convex lens.",
-      "ExperimentPic": "experiment9.png",
+      "ExperimentPic": "experiment11.png",
       "ExperimentJSON": "-"
     },
     {
       "ExperimentNumber": 12,
       "ExperimentType": "OpticalLab12",
       "ExperimentTitle": "To find the focal length of a concave lens with the help of a convex lens",
-      "ExperimentPic": "experiment9.png",
+      "ExperimentPic": "experiment12.png",
       "ExperimentJSON": "-"
     },
     {
       "ExperimentNumber": 13,
       "ExperimentType": "my3",
       "ExperimentTitle": "To determine the angle of minimum deviation for a given glass prism, by plotting a graph between the angle of incidence and angle of deviation",
-      "ExperimentPic": "experiment9.png",
+      "ExperimentPic": "experiment13.png",
       "ExperimentJSON": "-"
     },
     {
