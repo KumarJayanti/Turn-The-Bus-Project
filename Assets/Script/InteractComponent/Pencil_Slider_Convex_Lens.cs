@@ -35,9 +35,9 @@ public class Pencil_Slider_Convex_Lens : MonoBehaviour
         }
 
         // Slider maps: 0 → 60cm, 1 → 0cm
-        float U = 60f * (1f - pencil.value);
+        float U = (float)Math.Round(60f * (1f - pencil.value), 1);
         float u_real = -U;  // Object on left → negative
-        u.text = $"U : {U:0.##}cm";
+        u.text = $"U : {U:0.0}cm";
 
         float f = focalLength;
         float v_real;
@@ -52,7 +52,8 @@ public class Pencil_Slider_Convex_Lens : MonoBehaviour
         else
         {
             v_real = 1f / ((1f / f) + (1f / u_real)); // signed image distance
-            v.text = $"V : {Math.Abs(v_real):0.##}cm";
+            v_real = (float)Math.Round(v_real, 1);  // Round to 1 decimal
+            v.text = $"V : {Math.Abs(v_real):0.0}cm";
         }
 
         float magnification = isInfinity ? 1f : v_real / u_real;
