@@ -18,8 +18,8 @@ public class SliderClamp : MonoBehaviour
     {
         slider.onValueChanged.AddListener((v) =>
         {
-            valueText.text = v.ToString("0.00");
-            if (v > imageFlip) { 
+            valueText.text = (v).ToString("0.00");
+            if ((v-slider.minValue) > imageFlip) { 
                 pencil.transform.rotation = Quaternion.EulerRotation(new Vector3(0,0,3.1f));
                 pencil.transform.localPosition = new Vector3(0, 513, 0);
             }
@@ -27,7 +27,7 @@ public class SliderClamp : MonoBehaviour
                 pencil.transform.rotation = Quaternion.EulerRotation(new Vector3(0, 0, 0));
                 pencil.transform.localPosition = new Vector3(0, -513, 0);
             }
-            pencil.transform.localScale = new Vector2((1+v/5) + imageFlip / 5, (1 + v / 5) + imageFlip / 5);
+            pencil.transform.localScale = new Vector2((1+(v - slider.minValue)/5) + imageFlip / 5, (1 + (v - slider.minValue) / 5) + imageFlip / 5);
         });
     }
 
@@ -40,7 +40,7 @@ public class SliderClamp : MonoBehaviour
     public void concave()
     {
         imageFlip = 5f;
-        if (slider.value > imageFlip)
+        if ((  slider.value - slider.minValue ) > imageFlip)
         {
             pencil.transform.rotation = Quaternion.EulerRotation(new Vector3(0, 0, 3.1f));
             pencil.transform.localPosition = new Vector3(0, 513, 0);
@@ -50,12 +50,12 @@ public class SliderClamp : MonoBehaviour
             pencil.transform.rotation = Quaternion.EulerRotation(new Vector3(0, 0, 0));
             pencil.transform.localPosition = new Vector3(0, -513, 0);
         }
-        pencil.transform.localScale = new Vector2((1 + slider.value / 5)+imageFlip/5, (1 + slider.value / 5) + imageFlip / 5);
+        pencil.transform.localScale = new Vector2((1 + (  slider.value - slider.minValue ) / 5)+imageFlip/5, (1 + (  slider.value - slider.minValue ) / 5) + imageFlip / 5);
     }
     public void water()
     {
         imageFlip = 7f;
-        if (slider.value > imageFlip)
+        if ((  slider.value - slider.minValue ) > imageFlip)
         {
             pencil.transform.rotation = Quaternion.EulerRotation(new Vector3(0, 0, 3.1f));
             pencil.transform.localPosition = new Vector3(0, 513, 0);
@@ -65,12 +65,12 @@ public class SliderClamp : MonoBehaviour
             pencil.transform.rotation = Quaternion.EulerRotation(new Vector3(0, 0, 0));
             pencil.transform.localPosition = new Vector3(0, -513, 0);
         }
-        pencil.transform.localScale = new Vector2((1 + slider.value / 5) + imageFlip / 5, (1 + slider.value / 5) + imageFlip / 5);
+        pencil.transform.localScale = new Vector2((1 + (  slider.value - slider.minValue ) / 5) + imageFlip / 5, (1 + (  slider.value - slider.minValue ) / 5) + imageFlip / 5);
     }
     public void convex()
     {
         imageFlip = 10f;
-        if (slider.value > imageFlip)
+        if ((  slider.value - slider.minValue ) > imageFlip)
         {
             pencil.transform.rotation = Quaternion.EulerRotation(new Vector3(0, 0, 3.1f));
             pencil.transform.localPosition = new Vector3(0, 513, 0);
@@ -80,6 +80,6 @@ public class SliderClamp : MonoBehaviour
             pencil.transform.rotation = Quaternion.EulerRotation(new Vector3(0, 0, 0));
             pencil.transform.localPosition = new Vector3(0, -513, 0);
         }
-        pencil.transform.localScale = new Vector2((1 + slider.value / 5) + imageFlip / 5, (1 + slider.value / 5) + imageFlip / 5);
+        pencil.transform.localScale = new Vector2((1 + (  slider.value - slider.minValue ) / 5) + imageFlip / 5, (1 + (  slider.value - slider.minValue ) / 5) + imageFlip / 5);
     }
 }

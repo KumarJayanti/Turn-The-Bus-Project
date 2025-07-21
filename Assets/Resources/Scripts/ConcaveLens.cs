@@ -91,23 +91,22 @@ public class ConcaveLens : MonoBehaviour
 
         // Position the pencil (object) at a fixed distance from the lens, just below the principal axis
         pencil.transform.position = initialLensPosition - new Vector3(objectDistanceFromLens, 0.5f, 0);
-
         // Calculate the intermediate image distance using the lens formula: 1/f = 1/do + 1/di
-        float intermediateImageDistance = 1 / (1 / focalLengthLens - 1 / objectDistanceFromLens);
+        float intermediateImageDistance = 1 / (1 / focalLengthLens + 1 / objectDistanceFromLens);
 
         // Calculate the position of the intermediate image
         Vector3 intermediateImagePosition = new Vector3(intermediateImageDistance, 0, 0);
-
         // Calculate the virtual object distance for the concave lens (distance from the lens to the intermediate image)
-        float virtualObjectDistance = Vector3.Distance(concaveLens.transform.position, intermediateImagePosition);
+        float virtualObjectDistance = concaveLens.transform.position.x -  intermediateImagePosition.x ;
+        // Debug.Log("finalImageDistancem "+focalLengthConcave+" "+virtualObjectDistance);
 
         // Calculate the refracted image distance using the lens formula: 1/f = 1/do + 1/di
-        float finalImageDistance = 1 / (1 / focalLengthConcave + 1 / virtualObjectDistance);
+        float finalImageDistance = 1 / ((1 / focalLengthConcave) + (1 / virtualObjectDistance));
+        // Debug.Log("finalImageDistancem2 "+finalImageDistance);
 
         Vector3 finalImagePosition = concaveLens.transform.position + new Vector3(finalImageDistance, 0, 0);
         float finalImageDistanceFromLens = Vector3.Distance(initialLensPosition, concaveLens.transform.position) + finalImageDistance;
         //float focalLengthConcave = 1 / (1 / (6.0 - concaveLens.transform.position) + 1 / finalImageDistance);
-
 
         // Move the image needle to the final image position
         imageNeedle.transform.position = new Vector3(finalImagePosition.x, -pencil.transform.position.y - 0.2f, pencil.transform.position.z);
@@ -122,11 +121,9 @@ public class ConcaveLens : MonoBehaviour
             else
             {
                 finalImageText.text = 
-                            "Final Image Distance (v) from Concave Lens: " + finalImageDistance.ToString() + "\n" +
-                            "Virtual Object Distance (u) from Concave Lens: " + virtualObjectDistance.ToString() + "\n" +
-                            "Focal length (1/v-1/u): " + focalLengthConcave.ToString();
-
-                
+                    "Final Image Distance (v) from Concave Lens: " + (Mathf.Ceil((finalImageDistance*5) * 10f) / 10f).ToString("F1") + "\n" +
+                    "Virtual Object Distance (u) from Concave Lens: " + (Mathf.Ceil((virtualObjectDistance*5) * 10f) / 10f).ToString("F1") + "\n" +
+                    "Focal length (1/v-1/u): " + (Mathf.Ceil((focalLengthConcave*5) * 10f) / 10f).ToString("F1");
 
             }
         }

@@ -126,7 +126,7 @@ public class ConvexMirrorScript : MonoBehaviour
             }
             else
             {
-                finalImageText.text = "Final Image Distance (v): " + finalImageDistance.ToString("F2");
+                finalImageText.text = "Final Image Distance (v): " + (finalImageDistance*5).ToString("F1");
             }
         }
 

@@ -25,8 +25,8 @@ public class Pencil_Slider : MonoBehaviour
     {
         float U = 47.88f - pencil.value * 47.88f;
         float V = 10 * U / (U - 10);
-        u.text = "U : " + string.Format("{0:0.##}", U) + "cm";
-        v.text = "V : " + string.Format("{0:0.##}",V) + "cm";
+u.text = "U : " + string.Format("{0:0.0}", U) + "cm";
+v.text = "V : " + string.Format("{0:0.0}", V) + "cm";
 
         pencil_Image.rectTransform.pivot = new Vector2(0, 0);
         pencil_Image.rectTransform.sizeDelta = new Vector2(360.7f, Math.Abs(160f*V/U));

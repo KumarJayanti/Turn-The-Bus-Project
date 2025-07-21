@@ -140,8 +140,7 @@ public class LensInteractionScript2D : MonoBehaviour
 
     // Image distance using lens formula (1/f = 1/do + 1/di)
     float imageDistance = 1 / (1 / focalLength - 1 / objectDistance);
-
-    graph.AddPointXY (objectDistance,imageDistance);
+    graph.AddPointXY ((objectDistance*5),(imageDistance*5));
 
     // Adjust for each case
     if (objectDistance > 2 * focalLength)
@@ -209,9 +208,9 @@ public class LensInteractionScript2D : MonoBehaviour
         float focalLength = focalLengthSlider != null ? focalLengthSlider.value : 0;
 
         if (objectDistanceText != null)
-            objectDistanceText.text = "Object Distance (u): " + objectDistance.ToString("F2");
+            objectDistanceText.text = "Object Distance (u): " + (objectDistance*5).ToString("F1");
         if (focalLengthText != null)
-            focalLengthText.text = "Focal Length (f): " + focalLength.ToString("F2");
+            focalLengthText.text = "Focal Length (f): " + (focalLength*5).ToString("F1");
 
         if (imageDistanceText != null)
         {
