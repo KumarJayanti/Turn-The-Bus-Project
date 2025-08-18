@@ -126,7 +126,7 @@ public class ConvexMirrorScript : MonoBehaviour
             }
             else
             {
-                finalImageText.text = "Final Image Distance (v): " + (finalImageDistance*5).ToString("F1");
+                finalImageText.text = "Final Image Distance (v): " + (finalImageDistance * 5).ToString("F1");
             }
         }
 
@@ -157,7 +157,7 @@ public class ConvexMirrorScript : MonoBehaviour
         AddLabelToPoint(new GameObject("F1"), "LabelF1", "F1", initialLensPosition + new Vector3(focalLengthLens, 0, 0));
         AddLabelToPoint(new GameObject("2F1"), "Label2F1", "2F1", initialLensPosition + new Vector3(2 * focalLengthLens, 0, 0));
         AddLabelToPoint(new GameObject("F2"), "LabelF2", "F2", initialLensPosition - new Vector3(focalLengthLens, 0, 0));
-        AddLabelToPoint(new GameObject("2F2"), "Label2F2", "2F2", initialLensPosition - new Vector3(2 * focalLengthLens, 0, 0));
+        AddLabelToPoint(new GameObject(" 2F2"), "Label 2F2", " 2F2", initialLensPosition - new Vector3(2 * focalLengthLens, 0, 0));
         AddLabelToPoint(new GameObject("O"), "LabelO", "O", initialLensPosition);
         AddLabelToPoint(pencil, "LabelAB", "AB", pencil.transform.position);
         AddLabelToPoint(imageNeedle, "LabelA'B'", "A'B'", imageNeedle.transform.position);
@@ -181,12 +181,13 @@ public class ConvexMirrorScript : MonoBehaviour
 
         GameObject labelObject = new GameObject(labelName);
         labelObject.transform.SetParent(point.transform);
-        labelObject.transform.localPosition = new Vector3(0, -0.1f, 0);
+        labelObject.transform.localPosition = new Vector3(0, -0.3f, 0);
 
         TextMeshPro label = labelObject.AddComponent<TextMeshPro>();
+        label.fontStyle = FontStyles.Bold;
         label.text = labelText;
-        label.fontSize = 3;
-        label.color = Color.black;
+        label.fontSize = 4;
+        label.color = Color.white;
         label.alignment = TextAlignmentOptions.Center;
     }
 }
