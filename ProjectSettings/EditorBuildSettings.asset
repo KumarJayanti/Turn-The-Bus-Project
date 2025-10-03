@@ -38,5 +38,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LabScenes/my3.unity
     guid: ef127ae3e49209349872971666a356cf
+  - enabled: 1
+    path: Assets/Scenes/LabScenes/my8.unity
+    guid: fdc9c7acac7e8eb44b86b77949b9f82d
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

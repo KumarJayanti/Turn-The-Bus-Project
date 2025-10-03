@@ -64,6 +64,13 @@
       "ExperimentJSON": "Experiments/Physics/12TH/experiment7a"
     },
     {
+      "ExperimentNumber": 8,
+      "ExperimentType": "my8",
+      "ExperimentTitle": "To determine the frequency of alternating current using a sonometer and an electromagnet",
+      "ExperimentPic": "experiment8.png",
+      "ExperimentJSON": "-"
+    },
+    {
       "ExperimentNumber": 9,
       "ExperimentType": "OpticalLab9",
       "ExperimentTitle": "To find the value of ‘v’ for different values of ‘u’ in case of concave mirror and to find the focal length",
