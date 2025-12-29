@@ -97,7 +97,7 @@
       "Rotation": [0, -90, 0],
       "Scale": [1, 2, 2],
       "Interfaces": ["c1_out", "amo"],
-      "Parameters": ["nill"]
+      "Parameters": [40, 5e-6, 1e-6, 1.2, 0.5]
     },
     {
       "Name": "Connect1",

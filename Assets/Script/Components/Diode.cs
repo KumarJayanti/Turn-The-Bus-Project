@@ -14,14 +14,31 @@ public class Diode : CircuitComponent
         this.Title = title;
         this.Description = description;
 
+        // Defaults modeled after a general 1N4007 diode.
+        double saturationCurrent = 7.69e-11;
+        double seriesResistance = 4.2e-2;
+        double breakdownVoltage = 1.0e3;
+        double breakdownCurrent = 5.0e-6;
+        double emissionCoefficient = 1.45e0;
+
+        // Optional overrides from experiment JSON: [bv, ibv, is, n, rs]
+        if (parameters != null)
+        {
+            if (parameters.Length >= 1) { breakdownVoltage = parameters[0]; }
+            if (parameters.Length >= 2) { breakdownCurrent = parameters[1]; }
+            if (parameters.Length >= 3) { saturationCurrent = parameters[2]; }
+            if (parameters.Length >= 4) { emissionCoefficient = parameters[3]; }
+            if (parameters.Length >= 5) { seriesResistance = parameters[4]; }
+        }
+
         var model = new DiodeModel("D1N4007");
-        model.SetParameter("is", 7.69e-11);//Saturation current
-        model.SetParameter("rs", 4.2e-2);//Series Resistance
-        model.SetParameter("bv", 1.0e3);//Reverse Breakdown voltage
-        model.SetParameter("ibv", 5.0e-6);//Reverse Breakdown Current
+        model.SetParameter("is", saturationCurrent);//Saturation current
+        model.SetParameter("rs", seriesResistance);//Series Resistance
+        model.SetParameter("bv", breakdownVoltage);//Reverse Breakdown voltage
+        model.SetParameter("ibv", breakdownCurrent);//Reverse Breakdown Current
         model.SetParameter("cjo", 2.65e-11);//Zero-bias junction capacitance
         model.SetParameter("m", 3.33e-1);//Grading coefficient
-        model.SetParameter("n", 1.45e0);//Emission coefficient
+        model.SetParameter("n", emissionCoefficient);//Emission coefficient
         model.SetParameter("tt", 4.32e-6);//transi-time
 
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
