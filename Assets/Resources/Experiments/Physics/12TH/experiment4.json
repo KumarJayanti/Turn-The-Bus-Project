@@ -90,7 +90,7 @@
       "Position": [0.17, 0.08, 6.19],
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
-      "Interfaces": ["d", "c5_out"],
+      "Interfaces": ["c5_out", "d"],
       "Parameters": [1.1]
     },
     {
@@ -101,7 +101,7 @@
       "Position": [-1.76, 0.19, 9.32],
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
-      "Interfaces": ["l", "c6_out"],
+      "Interfaces": ["c6_out", "l"],
       "Parameters": [1.5]
     },
     {

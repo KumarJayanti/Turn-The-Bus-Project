@@ -47,10 +47,30 @@ public class ZenerDiode : CircuitComponent
         this.Description = description;
 
         // Validate parameters length
-        if (parameters != null && parameters.Length >= 2)
+        if (parameters != null)
         {
-            BreakdownVoltage = parameters[0];
-            ReverseSaturationCurrent = parameters[1];
+            if (parameters.Length >= 3)
+            {
+                float minVz = parameters[0];
+                float maxVz = parameters[1];
+                if (maxVz < minVz)
+                {
+                    float tmp = minVz;
+                    minVz = maxVz;
+                    maxVz = tmp;
+                }
+                BreakdownVoltage = UnityEngine.Random.Range(minVz, maxVz);
+                ReverseSaturationCurrent = parameters[2];
+            }
+            else if (parameters.Length >= 2)
+            {
+                BreakdownVoltage = parameters[0];
+                ReverseSaturationCurrent = parameters[1];
+            }
+            else
+            {
+                Debug.LogWarning("Insufficient parameters provided. Using default values.");
+            }
         }
         else
         {
