@@ -31,7 +31,8 @@ public class Diode : CircuitComponent
             if (parameters.Length >= 5) { seriesResistance = parameters[4]; }
         }
 
-        var model = new DiodeModel("D1N4007");
+        string modelName = $"{name}_model";
+        var model = new DiodeModel(modelName);
         model.SetParameter("is", saturationCurrent);//Saturation current
         model.SetParameter("rs", seriesResistance);//Series Resistance
         model.SetParameter("bv", breakdownVoltage);//Reverse Breakdown voltage
@@ -42,8 +43,8 @@ public class Diode : CircuitComponent
         model.SetParameter("tt", 4.32e-6);//transi-time
 
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
-        spiceEntitys.Add(new SpiceSharp.Components.DiodeModel(model.Name));
-        spiceEntitys.Add(new SpiceSharp.Components.Diode(name, interfaces[0], interfaces[1], "D1N4007"));
+        spiceEntitys.Add(model);
+        spiceEntitys.Add(new SpiceSharp.Components.Diode(name, interfaces[0], interfaces[1], modelName));
     }
 
     // Start is called before the first frame update
