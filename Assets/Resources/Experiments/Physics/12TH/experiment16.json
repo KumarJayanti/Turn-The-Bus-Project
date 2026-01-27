@@ -68,14 +68,14 @@
     },
     {
       "Name": "Am1",
-      "Type": "Ammeter",
-      "Title": "Ammeter",
-      "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
+      "Type": "Microammeter",
+      "Title": "Microammeter",
+      "Description": "Measures the current in the circuit in microampere range for reverse-bias measurements.",
       "Position": [7.75, 0, 8.45],
       "Rotation": [0, -90, 0],
       "Scale": [20, 20, 20],
       "Interfaces": ["amo", "ami"],
-      "Parameters": [1.0e3, 1]
+      "Parameters": [1.0e6, 1]
     },
     {
       "Name": "Vm",
@@ -97,7 +97,7 @@
       "Rotation": [0, -90, 0],
       "Scale": [1, 2, 2],
       "Interfaces": ["c1_out", "amo"],
-      "Parameters": [40, 5e-6, 1e-12, 1.2, 1.0e6]
+      "Parameters": [40, 1e-9, 1e-12, 1.2, 1.0e6]
     },
     {
       "Name": "Connect1",
