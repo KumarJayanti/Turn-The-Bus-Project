@@ -120,11 +120,18 @@
       "ExperimentJSON": "-"
     },
     {
-      "ExperimentNumber": 16,
+      "ExperimentNumber": 16.1,
       "ExperimentType": "ElectricalLab",
-      "ExperimentTitle": "To draw the I - V characteristic curves of a p-n junction in forward bias and reverse bias.",
+      "ExperimentTitle": "To draw the I - V characteristic curves of a p-n junction in forward bias.",
       "ExperimentPic": "experiment16.png",
       "ExperimentJSON": "Experiments/Physics/12TH/experiment16"
+    },
+    {
+      "ExperimentNumber": 16.2,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To draw the I - V characteristic curves of a p-n junction in reverse bias.",
+      "ExperimentPic": "experiment16.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment16_reverse"
     },
     {
       "ExperimentNumber": 17,

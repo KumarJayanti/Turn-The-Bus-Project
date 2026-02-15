@@ -1,51 +1,49 @@
-{
-  "ExperimentTitle": "E16 (Forward Bias): I–V characteristics of a p-n junction diode",
-  "Aim": "To draw the forward-bias I–V characteristic curve of a p-n junction diode.",
+   {
+  "ExperimentTitle": "E16 (Reverse Bias): I–V characteristics of a p-n junction diode",
+  "Aim": "To draw the reverse-bias I–V characteristic curve of a p-n junction diode.",
   "Background": "",
   "MaterialsRequired": [
     "p-n junction diode (1N4007)",
     "series resistor (330Ω)",
-    "variable voltage power supply (0–12V)",
+    "variable voltage power supply (-12–0V)",
     "voltmeter across diode",
     "voltmeter across supply",
-    "milliammeter",
+    "microammeter",
     "plug key",
     "connecting wires"
   ],
   "Theory": "",
   "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment16.png",
   "Procedure": [
-    "Close the key and increase the forward voltage slowly (0 to +12V).",
-    "For the forward I–V curve, take finer steps near the knee region (around 0.5V–0.9V across the diode).",
-    "Record the diode voltage and current for each step.",
-    "Use the supply voltmeter to verify the applied voltage.",
-    "Plot the forward I–V curve (current rises sharply after cut-in voltage)."
+    "Close the key and increase the reverse voltage slowly (0 to -12V).",
+    "Note the reverse current (µA) and reverse voltage across the diode.",
+    "Use the supply voltmeter to verify the applied reverse voltage.",
+    "Plot the reverse I–V curve (flat leakage region expected)."
   ],
   "Observations": [],
   "Components": [
     {
       "Name": "VV1",
       "Type": "VariableVoltage",
-      "Title": "VariableVoltage (0–12V)",
-      "Description": "DC supply for forward bias (positive sweep)",
+      "Title": "VariableVoltage (-12–0V)",
+      "Description": "DC supply for reverse bias (negative sweep)",
       "Position": [-0.2, 2.3, -2.47],
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
       "Interfaces": ["pos", "0", "pos1", "0"],
-      "Parameters": [0, 12]
+      "Parameters": [-12, 0]
     },
     {
       "Name": "K1",
       "Type": "PlugKey",
       "Title": "Plug Key (K)",
-      "Description": "Main circuit key (uses positive terminal for forward bias)",
+      "Description": "Main circuit key (uses negative terminal for reverse bias)",
       "Position": [-8.59, 0, 0.23],
       "Rotation": [0, -90, 0],
       "Scale": [2, 2, 2],
-      "Interfaces": ["pos", "c3_out"],
+      "Interfaces": ["pos1", "c3_out"],
       "Parameters": [3.0]
     },
-
     {
       "Name": "Connector5",
       "Type": "Connector",
@@ -54,22 +52,20 @@
       "Position": [7.62, 0.99, -1.07],
       "Rotation": [0, 0, 0],
       "Scale": [0.2, 0.2, 0.2],
-      "Interfaces": ["pos1", "ami", "N8", "N9"],
+      "Interfaces": ["pos", "ami", "N8", "N9"],
       "Parameters": [0]
     },
-
     {
       "Name": "Am1",
       "Type": "Ammeter",
-      "Title": "Milliammeter",
-      "Description": "Measures forward current in mA range",
+      "Title": "Microammeter",
+      "Description": "Measures reverse current in µA range",
       "Position": [7.75, 0, 8.45],
       "Rotation": [0, -90, 0],
       "Scale": [20, 20, 20],
       "Interfaces": ["d_out_vis", "ami"],
-      "Parameters": [1000.0, 0.1]
+      "Parameters": [1000000.0, 10.0]
     },
-
     {
       "Name": "VmDiode",
       "Type": "Voltmeter",
@@ -81,7 +77,6 @@
       "Interfaces": ["d_in", "d_out"],
       "Parameters": [1.0, 100000000.0]
     },
-
     {
       "Name": "VmSupply",
       "Type": "Voltmeter",
@@ -117,7 +112,6 @@
       "Interfaces": ["d_in_vis", "d_in", "d_in", "d_in"],
       "Parameters": [0]
     },
-
     {
       "Name": "NodeDout",
       "Type": "Connector",
