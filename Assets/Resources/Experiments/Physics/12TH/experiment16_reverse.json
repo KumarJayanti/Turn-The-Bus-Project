@@ -88,19 +88,17 @@
       "Interfaces": ["pos", "pos1"],
       "Parameters": [1.0, 100000000.0]
     },
-
     {
       "Name": "Rseries",
       "Type": "Resistor",
-      "Title": "Series Resistor (330Ω)",
+      "Title": "Series Resistor (1KOhm)",
       "Description": "Current limiting resistor",
       "Position": [-5.5, 2.3, 2.61],
       "Rotation": [0, -90, 0],
       "Scale": [0.66, 2, 2],
       "Interfaces": ["c1_out", "d_in_vis"],
-      "Parameters": [3, 3, 1, 0]
+      "Parameters": [1, 0, 2, 0]
     },
-
     {
       "Name": "NodeDin",
       "Type": "Connector",
@@ -123,19 +121,17 @@
       "Interfaces": ["d_out", "d_out_vis", "d_out_vis", "d_out_vis"],
       "Parameters": [0]
     },
-
     {
       "Name": "D1",
       "Type": "Diode",
       "Title": "Diode (1N4007)",
-      "Description": "Explicit 1N4007 diode model params [bv, ibv, is, n, rs]",
+      "Description": "Explicit 1N4007 diode model params [bv, ibv, is, n, rs] (REVERSED for reverse-bias experiment)",
       "Position": [-4.72, 2.3, 2.61],
       "Rotation": [0, -90, 0],
       "Scale": [1, 2, 2],
-      "Interfaces": ["d_in", "d_out"],
-      "Parameters": [1000.0, 5.0e-6, 7.69e-11, 1.45, 0.042]
+      "Interfaces": ["d_out", "d_in"],
+      "Parameters": [1000.0, 5.0e-6, 1.0e-12, 1.45, 0.042]
     },
-
     {
       "Name": "Connect1",
       "Type": "Connector",
