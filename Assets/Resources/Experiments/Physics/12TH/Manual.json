@@ -45,21 +45,21 @@
     {
       "ExperimentNumber": 6,
       "ExperimentType": "ElectricalLab",
-      "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
+      "ExperimentTitle": "To determine the resistance of a galvanometer by half-deflection method and to find its figure of merit.",
       "ExperimentPic": "experiment6.png",
       "ExperimentJSON": "Experiments/Physics/12TH/experiment6"
     },
     {
       "ExperimentNumber": 7.1,
       "ExperimentType": "ElectricalLab",
-      "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
+      "ExperimentTitle": "To convert the given galvanometer into an ammeter of a desired range (say 0 to 30 mA).",
       "ExperimentPic": "experiment7.png",
       "ExperimentJSON": "Experiments/Physics/12TH/experiment7b"
     },
     {
       "ExperimentNumber": 7.2,
       "ExperimentType": "ElectricalLab",
-      "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
+      "ExperimentTitle": "To convert the given galvanometer into a voltmeter of desired range (say 0 to 3 V).",
       "ExperimentPic": "experiment7.png",
       "ExperimentJSON": "Experiments/Physics/12TH/experiment7a"
     },

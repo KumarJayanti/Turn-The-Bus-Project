@@ -37,7 +37,7 @@ public class Pencil_Slider_Convex_Lens : MonoBehaviour
         // Slider maps: 0 → 60cm, 1 → 0cm
         float U = (float)Math.Round(60f * (1f - pencil.value), 1);
         float u_real = -U;  // Object on left → negative
-        u.text = $"U : {U:0.0}cm";
+        u.text = $"U : {-1 *U:0.0}cm";
 
         float f = focalLength;
         float v_real;
@@ -78,6 +78,7 @@ public class Pencil_Slider_Convex_Lens : MonoBehaviour
             // Virtual image → same side (left side) → -X → upright
             imageX = CmToXImage(v_real);
             pencil_Image.rectTransform.rotation = Quaternion.identity;
+            v.text = $"V : {-1 * Math.Abs(v_real):0.0}cm";
         }
 
         pencil_Image.rectTransform.anchoredPosition = new Vector2(imageX, 0);
@@ -87,7 +88,7 @@ public class Pencil_Slider_Convex_Lens : MonoBehaviour
             : new Color32(211, 140, 140, 200); // real
 
         float objectX = CmToXObject(u_real);
-        Debug.Log($"[Optics Debug] U = {U:0.##} cm → Unity X = {objectX:0.##} | V = {(isInfinity ? "∞" : v_real.ToString("0.##"))} cm → Unity X = {imageX:0.##}");
+        //Debug.Log($"[Optics Debug] U = {U:0.##} cm → Unity X = {objectX:0.##} | V = {(isInfinity ? "∞" : v_real.ToString("0.##"))} cm → Unity X = {imageX:0.##}");
     }
 
     // Object on left (U) → Unity -X
