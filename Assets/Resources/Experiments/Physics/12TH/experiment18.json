@@ -81,24 +81,24 @@
       "Position": [-1.03, 0, 7.75],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
-      "Interfaces": ["Amm_in", "Key1_out"],
+      "Interfaces": ["base", "emm"],
       "Parameters": [1, 1.0e8]
     },
     {
       "Name": "R1",
       "Type": "Resistor",
-      "Title": "Resistor",
+      "Title": "100 kΩ Resistor",
       "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
       "Position": [-2.45, 0, -1.77],
       "Rotation": [0, -90, 0],
       "Scale": [1, 2, 2],
       "Interfaces": ["r1", "Amm_in"],
-      "Parameters": [1, 0, 3, 0]
+      "Parameters": [1, 0, 4, 0]
     },
     {
       "Name": "Am1",
       "Type": "Ammeter",
-      "Title": "Ammeter",
+      "Title": "Microammeter",
       "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
       "Position": [1.31, 0, -1.23],
       "Rotation": [0, -90, 0],
@@ -136,8 +136,19 @@
       "Position": [2.38, 0, 7.25],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
-      "Interfaces": ["Amm2_in", "emm"],
+      "Interfaces": ["coll", "emm"],
       "Parameters": [1, 1.0e8]
+    },
+    {
+      "Name": "ConnectorEmm",
+      "Type": "Connector",
+      "Title": "Emitter Reference",
+      "Description": "Common emitter node tying input and output grounds together.",
+      "Position": [0.2, 0.99, -0.6],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["emm", "0", "neg", "NEmm"],
+      "Parameters": [0]
     },
     {
       "Name": "RS2",

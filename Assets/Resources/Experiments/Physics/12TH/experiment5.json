@@ -86,8 +86,19 @@
       "Name": "Am1",
       "Type": "CurrentMeasure",
       "Title": "Galvanometer",
-      "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+      "Description": "A galvanometer is a sensitive instrument used to detect small currents in a circuit and locate the balance point.",
       "Position": [-0.74, 0, 2.25],
+      "Rotation": [0, -90, 0],
+      "Scale": [15, 15, 15],
+      "Interfaces": ["cell_neg_out", "rb2_in"],
+      "Parameters": [1.0e3, 1, 0.05]
+    },
+    {
+      "Name": "Am2",
+      "Type": "CurrentMeasure",
+      "Title": "Ammeter",
+      "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+      "Position": [1.2, 0, 0.6],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
       "Interfaces": ["Amm", "Amm_Out"],
@@ -96,12 +107,34 @@
     {
       "Name": "K1",
       "Type": "PlugKey",
-      "Title": "(K3)Plug Key",
+      "Title": "(K1)Plug Key",
       "Description": "This is a plug key",
-      "Position": [5.7, 0, 3.06],
+      "Position": [4.1, 0, 0.6],
       "Rotation": [0, -180, 0],
       "Scale": [3, 3, 3],
-      "Interfaces": ["Amm_Out", "Key2_out"],
+      "Interfaces": ["Amm_Out", "0"],
+      "Parameters": [3.0]
+    },
+    {
+      "Name": "K2",
+      "Type": "PlugKey",
+      "Title": "(K2)Plug Key",
+      "Description": "This is a plug key",
+      "Position": [4.6, 0, 7.2],
+      "Rotation": [0, -180, 0],
+      "Scale": [3, 3, 3],
+      "Interfaces": ["c4_out", "rb1_in"],
+      "Parameters": [3.0]
+    },
+    {
+      "Name": "K3",
+      "Type": "PlugKey",
+      "Title": "(K3)Plug Key",
+      "Description": "This is a plug key",
+      "Position": [0.6, 0, 6.2],
+      "Rotation": [0, -180, 0],
+      "Scale": [3, 3, 3],
+      "Interfaces": ["rb2_in", "c2"],
       "Parameters": [3.0]
     },
     {
@@ -123,18 +156,29 @@
       "Position": [-3.73, 0, 8.91],
       "Rotation": [0, -90, 0],
       "Scale": [0.66, 2, 2],
-      "Interfaces": ["asd", "Amm_Out"],
+      "Interfaces": ["asd", "cell_neg_out"],
       "Parameters": [1, 0, 0, 0]
     },
     {
       "Name": "RS2",
       "Type": "Rheostat",
-      "Title": "(R_Box2) Resistance Box",
+      "Title": "(R_Box1) Resistance Box",
       "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
       "Position": [3.44, 1, 7.8],
       "Rotation": [0, -90, 0],
       "Scale": [5, 5, 5],
-      "Interfaces": ["Key2_out", "pos", "NILL"],
+      "Interfaces": ["rb1_in", "asd", "NILL"],
+      "Parameters": [10]
+    },
+    {
+      "Name": "RS3",
+      "Type": "Rheostat",
+      "Title": "(R_Box2) Resistance Box",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [1.6, 1, 7.0],
+      "Rotation": [0, -90, 0],
+      "Scale": [5, 5, 5],
+      "Interfaces": ["rb2_in", "c2", "NILL2"],
       "Parameters": [10]
     }
   ]
