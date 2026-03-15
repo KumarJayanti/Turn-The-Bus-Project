@@ -115,7 +115,7 @@
       "Rotation": [0, 1.84, 0],
       "Scale": [4, 4, 4],
       "Interfaces": ["coll", "base", "emm"],
-      "Parameters": [1.0e-2, 50, 2]
+      "Parameters": [1.0e-15, 50, 2]
     },
     {
       "Name": "Am2",
