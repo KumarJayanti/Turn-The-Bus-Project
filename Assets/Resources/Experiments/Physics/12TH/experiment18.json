@@ -81,7 +81,7 @@
       "Position": [-1.03, 0, 7.75],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
-      "Interfaces": ["base", "emm"],
+      "Interfaces": ["Amm_in", "emm"],
       "Parameters": [1, 1.0e8]
     },
     {
