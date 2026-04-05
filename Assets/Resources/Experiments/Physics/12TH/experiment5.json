@@ -136,6 +136,17 @@
       "Scale": [5, 5, 5],
       "Interfaces": ["Key2_out", "pos", "NILL"],
       "Parameters": [10]
+    },
+    {
+      "Name": "K3",
+      "Type": "PlugKey",
+      "Title": "(K3) Shorting Key for R_Box2",
+      "Description": "Shorts the resistance box (RS2) to obtain l0",
+      "Position": [3.44, 0.2, 5.5],
+      "Rotation": [0, -90, 0],
+      "Scale": [1.5, 1.5, 1.5],
+      "Interfaces": ["Key2_out", "pos"],
+      "Parameters": [3.0]
     }
   ]
 }

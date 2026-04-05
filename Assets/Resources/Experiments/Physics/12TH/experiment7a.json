@@ -1,6 +1,6 @@
 {
   "ExperimentTitle": "Class 12 Experiment 7",
-  "Aim": "To determine the internal resistance of a given primary cell using a potentiometer.",
+  "Aim": "To convert the given galvanometer (of known resistance and figure of merit) into an ammeter of a desired range (say 0 to 30 mA).",
   "Background": "",
   "MaterialsRequired": [
     "Potentiometer",

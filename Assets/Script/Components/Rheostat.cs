@@ -46,7 +46,7 @@ public class Rheostat : CircuitComponent
         {
             Circuit.componentTitle = Title;
             Circuit.componentDescription = Description;
-            Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " Meter" + "  " + string.Format("{0:0.##}", (Ratio * MaxResistance)) + " OHM"; //100M long wire
+            Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " CM" + "  " + string.Format("{0:0.##}", (Ratio * MaxResistance)) + " OHM"; //1M long wire
             spiceEntitys[0].SetParameter<double>("resistance", Math.Max(sliderRatio * MaxResistance, MinResistance));
             spiceEntitys[1].SetParameter<double>("resistance", Math.Max((1 - sliderRatio) * MaxResistance, MinResistance));
             if (OnComponentChanged != null)
@@ -62,6 +62,6 @@ public class Rheostat : CircuitComponent
         Circuit.isLabelWindowOpen = true;
         Circuit.componentTitle = Title;
         Circuit.componentDescription = Description;
-        Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " Meter"+"  "+string.Format("{0:0.##}",(Ratio*MaxResistance))+" OHM"; //100M long wire
+        Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " CM"+"  "+string.Format("{0:0.##}",(Ratio*MaxResistance))+" OHM"; //1M long wire
     }
 }

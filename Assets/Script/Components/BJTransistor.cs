@@ -55,7 +55,9 @@ public class BJTransistor : CircuitComponent
 
         // Set the model name
         model = uniqueModelName;
-        spiceEntitys.Add(new BipolarJunctionTransistor(name, interfaces[0], interfaces[1], interfaces[2], interfaces[3], model));
+        // Some prefabs only expose 3 interfaces (C, B, E). If substrate is missing, tie it to emitter.
+        string substrateNode = (interfaces != null && interfaces.Length > 3) ? interfaces[3] : interfaces[2];
+        spiceEntitys.Add(new BipolarJunctionTransistor(name, interfaces[0], interfaces[1], interfaces[2], substrateNode, model));
     }
 
     protected override void Start()

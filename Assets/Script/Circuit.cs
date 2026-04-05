@@ -76,7 +76,13 @@ public class Circuit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log($"Circuit.Start: expJSON = '{expJSON}'");
         TextAsset textJSON = Resources.Load<TextAsset>(expJSON);
+        if (textJSON == null)
+        {
+            Debug.LogError($"Circuit.Start: Resources.Load<TextAsset> returned null for '{expJSON}'. Make sure the file is in Assets/Resources and use path WITHOUT extension. For this file the correct path would be 'Experiments/Physics/12TH/experiment16' if the file is Assets/Resources/Experiments/Physics/12TH/experiment16.json");
+            return;
+        }
         circuitComponents = new List<CircuitComponent>();
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
         Debug.Log(componentMetaList.ToString());
