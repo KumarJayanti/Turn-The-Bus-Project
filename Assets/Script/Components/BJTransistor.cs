@@ -50,6 +50,10 @@ public class BJTransistor : CircuitComponent
         npnModel.SetParameter("bf", (double)ForwardBeta);
         npnModel.SetParameter("br", (double)ReverseBeta);
 
+        // ADD THESE
+        npnModel.SetParameter("vaf", 100.0);   // Early voltage
+        npnModel.SetParameter("ikf", 0.1);     // beta roll-off
+
         // Add the model to the entities list
         spiceEntitys.Add(npnModel);
 

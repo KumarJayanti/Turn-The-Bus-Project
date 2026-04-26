@@ -60,7 +60,7 @@
       "Rotation": [0, -178.76, 0],
       "Scale": [4, 4, 4],
       "Interfaces": ["Key1_out", "r1", "0"],
-      "Parameters": [100000]
+      "Parameters": [10000]
     },
     {
       "Name": "K1",
@@ -115,7 +115,7 @@
       "Rotation": [0, 1.84, 0],
       "Scale": [4, 4, 4],
       "Interfaces": ["coll", "base", "emm"],
-      "Parameters": [1.0e-15, 50, 2]
+      "Parameters": [1.0e-15, 100, 1]
     },
     {
       "Name": "Am2",
@@ -159,7 +159,7 @@
       "Rotation": [0, 3.66, 0],
       "Scale": [3, 3, 4],
       "Interfaces": ["Key2_out", "Amm2_in", "pos1"],
-      "Parameters": [500]
+      "Parameters": [10000]
     },
     {
       "Name": "DC2",
