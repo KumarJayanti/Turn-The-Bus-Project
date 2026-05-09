@@ -8,7 +8,7 @@ public class BJTransistor : CircuitComponent
     public const string MATERIAL_PATH = "Materials/Transistormaterials/";
     private static int transistorCounter = 0;
 
-    public float SaturationCurrent = 1e-14f; // Default saturation current
+    public float SaturationCurrent = 1e-15f; // Default saturation current
     public float ForwardBeta = 100f; // Default forward beta
     public float ReverseBeta = 1f; // Default reverse beta
     public string CollectorNode = "collector";
@@ -50,10 +50,13 @@ public class BJTransistor : CircuitComponent
         npnModel.SetParameter("bf", (double)ForwardBeta);
         npnModel.SetParameter("br", (double)ReverseBeta);
 
-        // ADD THESE
-        npnModel.SetParameter("vaf", 100.0);   // Early voltage
-        npnModel.SetParameter("ikf", 0.1);     // beta roll-off
+      
 
+        // CRITICAL
+        npnModel.SetParameter("vaf", 120.0);   // VERY IMPORTANT → small value
+        npnModel.SetParameter("ikf", 0.01);   // gain roll-off
+        npnModel.SetParameter("rc", 10.0);    // collector resistance
+        npnModel.SetParameter("re", 1.0);     // emitter resistance
         // Add the model to the entities list
         spiceEntitys.Add(npnModel);
 

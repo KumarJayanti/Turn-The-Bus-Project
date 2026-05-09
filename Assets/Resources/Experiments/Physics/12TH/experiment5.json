@@ -36,7 +36,7 @@
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
       "Interfaces": ["pos", "0"],
-      "Parameters": [2.0]
+      "Parameters": [1.55]
     },
     {
       "Name": "Connector3",
@@ -90,19 +90,8 @@
       "Position": [-9.0, 0, 1.25],
       "Rotation": [0, -90, 0],
       "Scale": [15, 15, 15],
-      "Interfaces": ["cell_neg_out", "rb2_in"],
-      "Parameters": [1.0e3, 1, 0.05]
-    },
-    {
-      "Name": "Am2",
-      "Type": "CurrentMeasure",
-      "Title": "Ammeter",
-      "Description": "Optional ammeter to monitor current in the main potentiometer circuit.",
-      "Position": [-0.5, 0, 1.0],
-      "Rotation": [0, -90, 0],
-      "Scale": [15, 15, 15],
-      "Interfaces": ["Amm", "Amm_Out"],
-      "Parameters": [1.0e3, 1, 0.05]
+      "Interfaces": ["cell_neg_out", "Amm"],
+      "Parameters": [1.0e6, 1000, 0.05]
     },
     {
       "Name": "K1",
@@ -112,7 +101,7 @@
       "Position": [5.7, 0, 4.06],
       "Rotation": [0, -180, 0],
       "Scale": [3, 3, 3],
-      "Interfaces": ["Amm_Out", "0"],
+      "Interfaces": ["c2", "0"],
       "Parameters": [3.0]
     },
     {
@@ -123,7 +112,7 @@
       "Position": [-4.0, 0, 4.0],
       "Rotation": [0, -180, 0],
       "Scale": [3, 3, 3],
-      "Interfaces": ["c4_out", "rb1_in"],
+      "Interfaces": ["c4_out", "rb1_out"],
       "Parameters": [3.0]
     },
     {
@@ -160,15 +149,15 @@
       "Parameters": [0, 7, 0, 0]
     },
     {
-      "Name": "RS2",
-      "Type": "Rheostat",
-      "Title": "(R_Box1) Resistance Box",
-      "Description": "External resistance R used in the calculation r = ((l0 - l) / l) * R.",
-      "Position": [-3.25, 1, 9.0],
-      "Rotation": [0, -90, 0],
-      "Scale": [5, 5, 5],
-      "Interfaces": ["rb1_in", "asd", "NILL"],
-      "Parameters": [10]
+  "Name": "RS2",
+  "Type": "Resistor",
+  "Title": "(R_Box1) Resistance Box",
+  "Description": "External resistance R used in the calculation r = ((l0 - l) / l) * R.",
+  "Position": [-3.25, 1, 9.0],
+  "Rotation": [0, -90, 0],
+  "Scale":  [0.66, 2, 2],
+  "Interfaces":  ["rb1_out",  "cell_neg_out"],
+  "Parameters": [5, 0, 0, 0]
     },
     {
       "Name": "RS3",
@@ -179,7 +168,7 @@
       "Rotation": [0, -90, 0],
       "Scale": [5, 5, 5],
       "Interfaces": ["rb2_in", "c2", "NILL2"],
-      "Parameters": [10000]
+      "Parameters": [1000]
     }
   ]
 }

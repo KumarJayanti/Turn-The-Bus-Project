@@ -70,7 +70,8 @@ public class Resistor : CircuitComponent
         
 
         ResistorParam1 = Math.Max(Math.Min((int)parameters[0], MAX_RESISTANCE_PARAM), MIN_RESISTANCE_PARAM);
-        ResistorParam2 = Math.Min(Math.Min((int)parameters[1], MAX_RESISTANCE_PARAM), MIN_RESISTANCE_PARAM);
+        //ResistorParam2 = Math.Min(Math.Min((int)parameters[1], MAX_RESISTANCE_PARAM), MIN_RESISTANCE_PARAM);
+        ResistorParam2 = Math.Max(Math.Min((int)parameters[1], MAX_RESISTANCE_PARAM), MIN_RESISTANCE_PARAM);
         Multiplier = Math.Max(Math.Min((int)parameters[2], MAX_MULTIPLIER), MIN_MULTIPLIER);
         Resistance = (ResistorParam1 * 10 + ResistorParam2) * Math.Pow(10, Multiplier);
         

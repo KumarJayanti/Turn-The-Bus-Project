@@ -10,7 +10,7 @@ public class Rheostat : CircuitComponent
     public GameObject slider;
     public double Ratio = 0.5f;
     public double MaxResistance;
-    public const double MinResistance = 0;
+    public const double MinResistance = 1.0;
 
     public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters, string title, string description)
     {
