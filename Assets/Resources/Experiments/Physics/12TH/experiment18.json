@@ -60,7 +60,7 @@
       "Rotation": [0, -178.76, 0],
       "Scale": [4, 4, 4],
       "Interfaces": ["Key1_out", "r1", "0"],
-      "Parameters": [100000]
+      "Parameters": [10000]
     },
     {
       "Name": "K1",
@@ -115,7 +115,7 @@
       "Rotation": [0, 1.84, 0],
       "Scale": [4, 4, 4],
       "Interfaces": ["coll", "base", "emm"],
-      "Parameters": [1.0e-15, 50, 2]
+      "Parameters": [1.0e-15, 100, 1]
     },
     {
       "Name": "Am2",
@@ -151,16 +151,16 @@
       "Parameters": [0]
     },
     {
-      "Name": "RS2",
-      "Type": "Rheostat",
-      "Title": "Rheostat",
-      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
-      "Position": [6, 1, 4.73],
-      "Rotation": [0, 3.66, 0],
-      "Scale": [3, 3, 4],
-      "Interfaces": ["Key2_out", "Amm2_in", "pos1"],
-      "Parameters": [500]
-    },
+  "Name": "RS2",
+  "Type": "Rheostat",
+  "Title": "Collector Rheostat",
+  "Description": "Collector-side current limiting rheostat used as a two-terminal resistor.",
+  "Position": [6, 1, 4.73],
+  "Rotation": [0, 3.66, 0],
+  "Scale": [3, 3, 4],
+  "Interfaces": ["Key2_out", "Amm2_in", "pos1"],
+  "Parameters": [500]
+},
     {
       "Name": "DC2",
       "Type": "VariableVoltage",
@@ -170,7 +170,7 @@
       "Rotation": [0, 0, 0],
       "Scale": [5, 5, 5],
       "Interfaces": ["pos1", "neg", "pos3", "neg"],
-      "Parameters": [0.0, 15.0]
+      "Parameters": [0.01, 15.0]
     },
     {
       "Name": "K2",

@@ -10,7 +10,7 @@ public class Rheostat : CircuitComponent
     public GameObject slider;
     public double Ratio = 0.5f;
     public double MaxResistance;
-    public const double MinResistance = 0;
+    public const double MinResistance = 1.0;
 
     public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters, string title, string description)
     {
@@ -46,7 +46,17 @@ public class Rheostat : CircuitComponent
         {
             Circuit.componentTitle = Title;
             Circuit.componentDescription = Description;
-            Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " CM" + "  " + string.Format("{0:0.##}", (Ratio * MaxResistance)) + " OHM"; //1M long wire
+            //Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " CM" + "  " + string.Format("{0:0.##}", (Ratio * MaxResistance)) + " OHM"; //1M long wire
+             if (Title.Contains("Meter Bridge"))
+             {
+                Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " cm";
+             }
+             else
+             {
+                  Circuit.componentValue =
+                     string.Format("{0:0.##}", (Ratio * 100)) + " cm  " +
+                     string.Format("{0:0.##}", (Ratio * MaxResistance)) + " OHM";
+            }
             spiceEntitys[0].SetParameter<double>("resistance", Math.Max(sliderRatio * MaxResistance, MinResistance));
             spiceEntitys[1].SetParameter<double>("resistance", Math.Max((1 - sliderRatio) * MaxResistance, MinResistance));
             if (OnComponentChanged != null)
@@ -62,6 +72,16 @@ public class Rheostat : CircuitComponent
         Circuit.isLabelWindowOpen = true;
         Circuit.componentTitle = Title;
         Circuit.componentDescription = Description;
-        Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " CM"+"  "+string.Format("{0:0.##}",(Ratio*MaxResistance))+" OHM"; //1M long wire
+        //Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " CM"+"  "+string.Format("{0:0.##}",(Ratio*MaxResistance))+" OHM"; //1M long wire
+        if (Title.Contains("Meter Bridge"))
+        {
+            Circuit.componentValue = string.Format("{0:0.##}", (Ratio * 100)) + " cm";
+        }
+        else
+        {
+            Circuit.componentValue =
+                string.Format("{0:0.##}", (Ratio * 100)) + " cm  " +
+                string.Format("{0:0.##}", (Ratio * MaxResistance)) + " OHM";
+        }
     }
 }
